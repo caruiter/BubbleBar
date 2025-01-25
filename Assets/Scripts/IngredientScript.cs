@@ -55,9 +55,10 @@ public class IngredientScript : MonoBehaviour
     }
 
     public void OnCollisionEnter2D(Collision2D other){
-        if(other.gameObject.CompareTag("Cup")){
+        if(other.gameObject.CompareTag("Cup") && carrying){
             Physics2D.IgnoreLayerCollision(7, 8,true); 
-            other.gameObject.GetComponent<CupScript>().AddIngredient(theIngredient);
+            int id = playerCarrying.GetPlayerID();
+            other.gameObject.GetComponent<CupScript>().AddIngredient(theIngredient, id);
             Debug.Log("clink");
         }
     }

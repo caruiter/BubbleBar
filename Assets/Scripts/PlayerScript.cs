@@ -81,4 +81,8 @@ public class PlayerScript : MonoBehaviour
         carrying = false;
         carried = null;
     }
+
+    public int GetPlayerID(){
+        return playerID;
+    }
 }
