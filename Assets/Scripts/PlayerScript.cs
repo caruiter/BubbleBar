@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     [SerializeField] private int playerID;
 
@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 	private string inputPrefix;	// InputManager uses "P1Button1", "P1Horizontal", etc. 
     private float playerSpeed = 3; //how fast does the player move?
     public bool carrying; //is the player carrying an ingredient?
-    public Ingredient carried;
+    public IngredientScript carried;
     private Rigidbody2D rb;
 
 	private void Awake()
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
                                 if (otherCollider.gameObject.CompareTag("Ingredient"))
                                     {
                                         Debug.Log(otherCollider.transform.name + "!");
-                                        otherCollider.GetComponent<Ingredient>().PickUp(this);
+                                        otherCollider.GetComponent<IngredientScript>().PickUp(this);
                                         break;
                                     }
                             }
@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
         
     }
 
-    public void GrabItem(Ingredient ingr){ //accessed by Ingredient class
+    public void GrabItem(IngredientScript ingr){ //accessed by Ingredient class
         carrying = true;
         carried = ingr;
     }

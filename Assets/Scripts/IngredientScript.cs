@@ -4,19 +4,22 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Ingredient : MonoBehaviour
+public class IngredientScript : MonoBehaviour
 {
 
     private bool carrying;
-    private Player playerCarrying;
+    private PlayerScript playerCarrying;
     private Vector2 distance;
     private float tilGrab;
+    private string theIngredient;
+    [SerializeField] IngredientScriptableObject ingredientScriptable;
 
     // Start is called before the first frame update
 
     void Start()
     {
      carrying = false;   
+     theIngredient = ingredientScriptable.GetIngredient();
     }
 
     // Update is called once per frame
@@ -31,7 +34,7 @@ public class Ingredient : MonoBehaviour
         }
     }
 
-    public void PickUp(Player p){ //player picks up the ingredient
+    public void PickUp(PlayerScript p){ //player picks up the ingredient
         if(tilGrab!<=0){
             carrying = true;
             playerCarrying = p;
@@ -44,9 +47,18 @@ public class Ingredient : MonoBehaviour
 
     public void SetDown(){ //player sets down the ingredient
         carrying = false;
-        playerCarrying.GetComponent<Player>().ReleaseItem();
+        playerCarrying.GetComponent<PlayerScript>().ReleaseItem();
         playerCarrying = null;
         tilGrab = 1;
         Physics2D.IgnoreLayerCollision(7, 9,false); 
+        Physics2D.IgnoreLayerCollision(7, 8,false); 
+    }
+
+    public void OnCollisionEnter2D(Collision2D other){
+        if(other.gameObject.CompareTag("Cup")){
+            Physics2D.IgnoreLayerCollision(7, 8,true); 
+            other.gameObject.GetComponent<CupScript>().AddIngredient(theIngredient);
+            Debug.Log("clink");
+        }
     }
 }
