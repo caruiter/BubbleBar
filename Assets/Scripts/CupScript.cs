@@ -11,6 +11,9 @@ public class CupScript : MonoBehaviour
 
     private bool controllable;
 
+    [SerializeField] private int shakeCount;
+    [SerializeField] private int shakeTarget; //change this in inspector to test
+
 
     void Awake(){
         inputPrefix = "P" + playerID; // Set inputPrefix using correct playerID
@@ -44,9 +47,31 @@ public class CupScript : MonoBehaviour
                 Debug.Log("cup " + playerID +" added " + ingr);
              }
         }
+
+        //If there are 3 ingredients, player must now shake the drink
+        if(Contents.Count==3 && playerNum == playerID)
+        {
+            ShakeDrink();
+        }
     }
 
     public void SetControllable(bool con){
         controllable = con;
+    }
+
+    public void ShakeDrink()
+    {
+        //Put code for turning the emptying cup function off here
+        
+        if(Input.GetButtonDown(inputPrefix + "Button" + (1)) || Input.GetButtonDown(inputPrefix + "Button" + (2)) || Input.GetButtonDown(inputPrefix + "Button" + (3)))
+        { 
+            //number of shakes goes up each time the player presses an input
+            shakeCount++;
+        }
+
+        if(shakeCount >= shakeTarget){
+            //Drink is finished shaking
+            Debug.Log("Drink done!");
+        }
     }
 }
