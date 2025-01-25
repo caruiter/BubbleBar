@@ -31,6 +31,8 @@ namespace Game
 			{
 				Debug.Log("Leaderboard:: No saved leaderboard found. Creating new file at " + filepath);
 				File.Create(filepath).Close();
+			} else{
+				Debug.Log("file at: " + filepath);
 			}
 
 				LeaderboardList list = new LeaderboardList();

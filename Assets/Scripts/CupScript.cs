@@ -9,9 +9,12 @@ public class CupScript : MonoBehaviour
     [SerializeField] private int playerID;
     private string inputPrefix;	// InputManager uses "P1Button1", "P1Horizontal", etc. 
 
+    private bool controllable;
+
 
     void Awake(){
         inputPrefix = "P" + playerID; // Set inputPrefix using correct playerID
+        controllable = true;
     }
 
     // Start is called before the first frame update    
@@ -23,11 +26,13 @@ public class CupScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(controllable){
          if (Input.GetButtonDown(inputPrefix + "Button" + (3))) //discard contents of cup
          {
             Debug.Log("discarded contents of cup " + playerID);
             Contents = new List<string>();
          }
+        }
     }
 
     public void AddIngredient(string ingr, int playerNum){ //called by IngredientScript class
@@ -39,5 +44,9 @@ public class CupScript : MonoBehaviour
                 Debug.Log("cup " + playerID +" added " + ingr);
              }
         }
+    }
+
+    public void SetControllable(bool con){
+        controllable = con;
     }
 }

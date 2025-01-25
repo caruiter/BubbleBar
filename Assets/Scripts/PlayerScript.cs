@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     [SerializeField] private int playerID;
+    [SerializeField] private CupScript matchedCup;
 
 
 	private string inputPrefix;	// InputManager uses "P1Button1", "P1Horizontal", etc. 
@@ -12,12 +13,16 @@ public class PlayerScript : MonoBehaviour
     public bool carrying; //is the player carrying an ingredient?
     public IngredientScript carried;
     private Rigidbody2D rb;
+    public int Score;
+    private bool moveEnabled;
 
 	private void Awake()
 	{
 		inputPrefix = "P" + playerID; // Set inputPrefix using correct playerID
         carrying = false;
         carried = null;
+        Score = 0;
+        moveEnabled = true;
 	}
 
     // Start is called before the first frame update
@@ -29,8 +34,8 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Vector2 playerInput = new Vector3( //find direction player is moving in
+        if(moveEnabled){
+        Vector2 playerInput = new Vector2( //find direction player is moving in
 				Input.GetAxisRaw(inputPrefix + "Horizontal"),
 				Input.GetAxisRaw(inputPrefix + "Vertical")
 				);
@@ -69,7 +74,7 @@ public class PlayerScript : MonoBehaviour
                 }
             
 
-
+        }
         
     }
 
@@ -84,5 +89,11 @@ public class PlayerScript : MonoBehaviour
 
     public int GetPlayerID(){
         return playerID;
+    }
+
+    public void Immobilize(){
+        rb.velocity = new Vector2(0,0);
+        moveEnabled = false;
+        matchedCup.SetControllable(false);
     }
 }
