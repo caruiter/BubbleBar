@@ -480,17 +480,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTestPrefab (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 928785017045545199, guid: 87a3f249b04bb46f7b4ff94128b1985d, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3325726456904675118, guid: 87a3f249b04bb46f7b4ff94128b1985d, type: 3}
       propertyPath: Score
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325726456904675118, guid: 87a3f249b04bb46f7b4ff94128b1985d, type: 3}
-      propertyPath: playerID
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3325726456904675118, guid: 87a3f249b04bb46f7b4ff94128b1985d, type: 3}
       propertyPath: matchedCup
@@ -535,14 +527,6 @@ PrefabInstance:
     - target: {fileID: 3424805931244593596, guid: 87a3f249b04bb46f7b4ff94128b1985d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6378369935656780552, guid: 87a3f249b04bb46f7b4ff94128b1985d, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7733410723096927568, guid: 87a3f249b04bb46f7b4ff94128b1985d, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 128
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1026,7 +1010,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032425715}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c72aad9a7009247f58a526e143bae005, type: 3}
   m_Name: 
@@ -1359,6 +1343,10 @@ PrefabInstance:
       value: PlayerTestPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 3325726456904675118, guid: 87a3f249b04bb46f7b4ff94128b1985d, type: 3}
+      propertyPath: Score
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325726456904675118, guid: 87a3f249b04bb46f7b4ff94128b1985d, type: 3}
       propertyPath: matchedCup
       value: 
       objectReference: {fileID: 439729693}
@@ -1401,6 +1389,10 @@ PrefabInstance:
     - target: {fileID: 3424805931244593596, guid: 87a3f249b04bb46f7b4ff94128b1985d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559338476331306656, guid: 87a3f249b04bb46f7b4ff94128b1985d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
