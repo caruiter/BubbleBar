@@ -29,6 +29,8 @@ namespace Game
 		[SerializeField] private Color colArrowsIdle;
 		[SerializeField] private Color colArrowsHit;
 		[SerializeField] private TMP_Text headerText;
+
+		[SerializeField] private TMP_Text topText;
 		private int activePlayerId = 1;							// Player currently entering score
 		private int activeSlotIndex = 0;					// Letter slot 1/2/3
 		private int[] activeLetter = new int[3];           // The index of the letter in slot 1/2/3
@@ -104,6 +106,7 @@ namespace Game
 						letterTextArr[j].text = chars[activeLetter[j]].ToString();
 					}
 					activePlayerId = i + 1;
+					topText.text = $"High Score!\n<size=+20><color=yellow>Player {activePlayerId}</color></size>";
 					headerText.text = $"High Score - Rank: {Leaderboard.PositionOnLeaderboard(gameManager.Players[i].Score)}\n<size=+20><color=white>Player {activePlayerId}</color></size>\n<size=+30><color=yellow>{gameManager.Players[i].Score}</color></size>";
 					waitingForScoreEntry = true;
 					while (waitingForScoreEntry) yield return null;
@@ -175,12 +178,25 @@ namespace Game
 				{
 					//upArrowArr[activeSlotIndex].DOKill();
 					Debug.Log("up one");
+
+					foreach (Image i in upArrowArr){ // reset colors
+						i.color = colArrowsIdle;
+					} foreach(Image b in downArrowArr){
+						b.color = colArrowsIdle;
+					}
+
 					upArrowArr[activeSlotIndex].color = colArrowsHit;
 					//upArrowArr[activeSlotIndex].DOColor(colArrowsIdle, 0.5f);
 				}
 				else
 				{
 					Debug.Log("down one");
+
+					foreach (Image i in upArrowArr){ // reset colors
+						i.color = colArrowsIdle;
+					} foreach(Image b in downArrowArr){
+						b.color = colArrowsIdle;
+					}
 					//downArrowArr[activeSlotIndex].DOKill();
 					downArrowArr[activeSlotIndex].color = colArrowsHit;
 					//downArrowArr[activeSlotIndex].DOColor(colArrowsIdle, 0.5f);

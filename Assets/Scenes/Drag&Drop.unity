@@ -726,6 +726,7 @@ MonoBehaviour:
   colArrowsIdle: {r: 0.42745098, g: 0.4392157, b: 0.23921569, a: 1}
   colArrowsHit: {r: 0.92156863, g: 0.72156864, b: 0.10980392, a: 1}
   headerText: {fileID: 1408293059}
+  topText: {fileID: 844173609}
 --- !u!1 &836125613
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +857,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &844173609 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1884480677873229746, guid: 74ac3f7d9640cc749a52e1dd65c0a5b7, type: 3}
+  m_PrefabInstance: {fileID: 361032750}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &901516229 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5135675757020136213, guid: 74ac3f7d9640cc749a52e1dd65c0a5b7, type: 3}
