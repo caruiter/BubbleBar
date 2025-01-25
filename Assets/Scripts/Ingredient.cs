@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -36,6 +37,8 @@ public class Ingredient : MonoBehaviour
             playerCarrying = p;
             distance = p.transform.position - this.transform.position;
             p.GrabItem(this);
+
+            Physics2D.IgnoreLayerCollision(7, 9,true); 
         }
     }
 
@@ -44,5 +47,6 @@ public class Ingredient : MonoBehaviour
         playerCarrying.GetComponent<Player>().ReleaseItem();
         playerCarrying = null;
         tilGrab = 1;
+        Physics2D.IgnoreLayerCollision(7, 9,false); 
     }
 }
