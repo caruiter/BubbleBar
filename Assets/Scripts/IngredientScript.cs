@@ -41,22 +41,28 @@ public class IngredientScript : MonoBehaviour
             distance = p.transform.position - this.transform.position;
             p.GrabItem(this);
 
-            Physics2D.IgnoreLayerCollision(7, 9,true); 
+            this.gameObject.layer = LayerMask.NameToLayer("MovingIngredient"+playerCarrying.GetPlayerID());
+            Physics2D.IgnoreLayerCollision(9+playerCarrying.GetPlayerID(), 9,true); 
         }
     }
 
     public void SetDown(){ //player sets down the ingredient
+
+        this.gameObject.layer = LayerMask.NameToLayer("Ingredient");
+        Physics2D.IgnoreLayerCollision(9+playerCarrying.GetPlayerID(), 8,false); 
+
         carrying = false;
         playerCarrying.GetComponent<PlayerScript>().ReleaseItem();
         playerCarrying = null;
         tilGrab = 1;
-        Physics2D.IgnoreLayerCollision(7, 9,false); 
-        Physics2D.IgnoreLayerCollision(7, 8,false); 
+        //Physics2D.IgnoreLayerCollision(7, 9,false); 
+        //Physics2D.IgnoreLayerCollision(7, 8,false); 
     }
 
     public void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.CompareTag("Cup") && carrying){
-            Physics2D.IgnoreLayerCollision(7, 8,true); 
+            //Physics2D.IgnoreLayerCollision(7, 8,true); 
+            Physics2D.IgnoreLayerCollision(9+playerCarrying.GetPlayerID(), 8,true); 
             int id = playerCarrying.GetPlayerID();
             other.gameObject.GetComponent<CupScript>().AddIngredient(theIngredient, id);
             Debug.Log("clink");

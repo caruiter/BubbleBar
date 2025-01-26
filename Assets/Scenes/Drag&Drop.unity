@@ -408,6 +408,10 @@ PrefabInstance:
       propertyPath: playerID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 397201553919255517, guid: df7691ed06197405d85b8ec40acf9bce, type: 3}
+      propertyPath: shakeTarget
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5446155827276267938, guid: df7691ed06197405d85b8ec40acf9bce, type: 3}
       propertyPath: m_Name
       value: Cup
@@ -1074,6 +1078,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 187759607625458300, guid: 1889a5100d32b4d449bdf1398b174953, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5760989
+      objectReference: {fileID: 0}
+    - target: {fileID: 187759607625458300, guid: 1889a5100d32b4d449bdf1398b174953, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9622642
+      objectReference: {fileID: 0}
+    - target: {fileID: 187759607625458300, guid: 1889a5100d32b4d449bdf1398b174953, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4221253
+      objectReference: {fileID: 0}
+    - target: {fileID: 3733307897099817781, guid: 1889a5100d32b4d449bdf1398b174953, type: 3}
+      propertyPath: ingredientScriptable
+      value: 
+      objectReference: {fileID: 11400000, guid: c7543e544d8204597ac596c3cec01a14, type: 2}
     - target: {fileID: 5132909013930465441, guid: 1889a5100d32b4d449bdf1398b174953, type: 3}
       propertyPath: m_Name
       value: Ingredient (1)
@@ -1272,6 +1292,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 187759607625458300, guid: 1889a5100d32b4d449bdf1398b174953, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4234049
+      objectReference: {fileID: 0}
+    - target: {fileID: 187759607625458300, guid: 1889a5100d32b4d449bdf1398b174953, type: 3}
+      propertyPath: m_Color.g
+      value: 0.41176474
+      objectReference: {fileID: 0}
+    - target: {fileID: 187759607625458300, guid: 1889a5100d32b4d449bdf1398b174953, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3733307897099817781, guid: 1889a5100d32b4d449bdf1398b174953, type: 3}
+      propertyPath: ingredientScriptable
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b18aed8d139d42b0bd2f6d220246266, type: 2}
     - target: {fileID: 5132909013930465441, guid: 1889a5100d32b4d449bdf1398b174953, type: 3}
       propertyPath: m_Name
       value: Ingredient (2)
@@ -1337,6 +1373,10 @@ PrefabInstance:
     - target: {fileID: 397201553919255517, guid: df7691ed06197405d85b8ec40acf9bce, type: 3}
       propertyPath: playerID
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 397201553919255517, guid: df7691ed06197405d85b8ec40acf9bce, type: 3}
+      propertyPath: shakeTarget
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5446155827276267938, guid: df7691ed06197405d85b8ec40acf9bce, type: 3}
       propertyPath: m_Name
@@ -1459,6 +1499,10 @@ PrefabInstance:
     - target: {fileID: 3325726456904675118, guid: 87a3f249b04bb46f7b4ff94128b1985d, type: 3}
       propertyPath: Score
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325726456904675118, guid: 87a3f249b04bb46f7b4ff94128b1985d, type: 3}
+      propertyPath: playerID
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3325726456904675118, guid: 87a3f249b04bb46f7b4ff94128b1985d, type: 3}
       propertyPath: matchedCup

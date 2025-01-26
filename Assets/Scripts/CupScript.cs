@@ -10,6 +10,7 @@ public class CupScript : MonoBehaviour
     private string inputPrefix;	// InputManager uses "P1Button1", "P1Horizontal", etc. 
 
     private bool controllable;
+    private bool shaking;
 
     [SerializeField] private int shakeCount;
     [SerializeField] private int shakeTarget; //change this in inspector to test
@@ -18,6 +19,7 @@ public class CupScript : MonoBehaviour
     void Awake(){
         inputPrefix = "P" + playerID; // Set inputPrefix using correct playerID
         controllable = true;
+        shaking = false;
     }
 
     // Start is called before the first frame update    
@@ -29,19 +31,23 @@ public class CupScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(controllable){
+        if(controllable && !shaking){ // if allowing control and not being shaken
          if (Input.GetButtonDown(inputPrefix + "Button" + (3))) //discard contents of cup
          {
             Debug.Log("discarded contents of cup " + playerID);
             Contents = new List<string>();
          }
         }
+
+        if(shaking){ //allow button mashing if shaking
+            ShakeDrink();
+        }
     }
 
     public void AddIngredient(string ingr, int playerNum){ //called by IngredientScript class
     Debug.Log(playerNum + " | " + playerID);
         if(Contents.Count<3 && playerNum == playerID){ //check that no more than 3 drinks have been added
-        Debug.Log("true?");
+            //Debug.Log("true?");
             if(Contents.Contains(ingr) ==false){ //check that ingredient isn't already in there
                 Contents.Add(ingr);
                 Debug.Log("cup " + playerID +" added " + ingr);
@@ -51,11 +57,13 @@ public class CupScript : MonoBehaviour
         //If there are 3 ingredients, player must now shake the drink
         if(Contents.Count==3 && playerNum == playerID)
         {
-            ShakeDrink();
+            Debug.Log("cup full");
+            shaking = true;
+            //ShakeDrink();
         }
     }
 
-    public void SetControllable(bool con){
+    public void SetControllable(bool con){ //should buttons effect the cup
         controllable = con;
     }
 
@@ -66,12 +74,14 @@ public class CupScript : MonoBehaviour
         if(Input.GetButtonDown(inputPrefix + "Button" + (1)) || Input.GetButtonDown(inputPrefix + "Button" + (2)) || Input.GetButtonDown(inputPrefix + "Button" + (3)))
         { 
             //number of shakes goes up each time the player presses an input
+            Debug.Log("shakes: " + shakeCount);
             shakeCount++;
         }
 
         if(shakeCount >= shakeTarget){
             //Drink is finished shaking
             Debug.Log("Drink done!");
+            shaking = false;
         }
     }
 }
