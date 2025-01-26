@@ -7,6 +7,6 @@ public class RecipeScriptableObject : ScriptableObject
 {
     [SerializeField] public string drinkName;
 
-    [SerializeField] public Image icon;
+    [SerializeField] public List<Image> icons;
     [SerializeField] public List<string> ingredients;
 }

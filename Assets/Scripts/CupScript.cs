@@ -63,10 +63,10 @@ public class CupScript : MonoBehaviour
     Debug.Log(playerNum + " | " + playerID);
         if(Contents.Count<3 && playerNum == playerID){ //check that no more than 3 drinks have been added
             //Debug.Log("true?");
-            if(Contents.Contains(ingr) ==false){ //check that ingredient isn't already in there
+            //if(Contents.Contains(ingr) ==false){ //check that ingredient isn't already in there
                 Contents.Add(ingr);
                 Debug.Log("cup " + playerID +" added " + ingr);
-                }
+                //}
         }
 
 
