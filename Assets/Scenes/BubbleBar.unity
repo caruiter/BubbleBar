@@ -547,6 +547,10 @@ PrefabInstance:
       propertyPath: playermatch
       value: 
       objectReference: {fileID: 1406147169}
+    - target: {fileID: 9200071854684165483, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
+      propertyPath: shakeTarget
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1387,7 +1391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'P1
+  m_text: 'P4
 
     Press any button to start'
   m_isRightToLeft: 0
@@ -1523,7 +1527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'P1
+  m_text: 'P2
 
     Press any button to start'
   m_isRightToLeft: 0
@@ -1774,7 +1778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1061731541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2058,63 +2062,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2487063026686947079, guid: 2665bee963fc8914f968e1f770db0882, type: 3}
   m_PrefabInstance: {fileID: 1217077805}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1265657597
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2355843141659573050, guid: 5532166cf93ad40c5805aad2932dfef5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.3531433
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355843141659573050, guid: 5532166cf93ad40c5805aad2932dfef5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.9897256
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355843141659573050, guid: 5532166cf93ad40c5805aad2932dfef5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355843141659573050, guid: 5532166cf93ad40c5805aad2932dfef5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355843141659573050, guid: 5532166cf93ad40c5805aad2932dfef5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355843141659573050, guid: 5532166cf93ad40c5805aad2932dfef5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355843141659573050, guid: 5532166cf93ad40c5805aad2932dfef5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355843141659573050, guid: 5532166cf93ad40c5805aad2932dfef5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355843141659573050, guid: 5532166cf93ad40c5805aad2932dfef5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2355843141659573050, guid: 5532166cf93ad40c5805aad2932dfef5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3059429516901819274, guid: 5532166cf93ad40c5805aad2932dfef5, type: 3}
-      propertyPath: m_Name
-      value: IngredientBlue
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5532166cf93ad40c5805aad2932dfef5, type: 3}
 --- !u!1 &1310918738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,6 +2844,10 @@ PrefabInstance:
       propertyPath: playermatch
       value: 
       objectReference: {fileID: 1217077806}
+    - target: {fileID: 9200071854684165483, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
+      propertyPath: shakeTarget
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3169,6 +3120,10 @@ PrefabInstance:
       propertyPath: playermatch
       value: 
       objectReference: {fileID: 1956828876}
+    - target: {fileID: 9200071854684165483, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
+      propertyPath: shakeTarget
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3247,7 +3202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'P1
+  m_text: 'P3
 
     Press any button to start'
   m_isRightToLeft: 0
@@ -3963,6 +3918,10 @@ PrefabInstance:
       propertyPath: playermatch
       value: 
       objectReference: {fileID: 1013962946}
+    - target: {fileID: 9200071854684165483, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
+      propertyPath: shakeTarget
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3991,4 +3950,3 @@ SceneRoots:
   - {fileID: 1061731545}
   - {fileID: 1447681818}
   - {fileID: 139298087}
-  - {fileID: 1265657597}
