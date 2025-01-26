@@ -7,6 +7,7 @@ public class CupScript : MonoBehaviour
 {
     public List<String> Contents;
     [SerializeField] private int playerID;
+    [SerializeField] private PlayerScript playermatch;
     private string inputPrefix;	// InputManager uses "P1Button1", "P1Horizontal", etc. 
 
     private bool controllable;
@@ -41,6 +42,14 @@ public class CupScript : MonoBehaviour
 
         if(shaking){ //allow button mashing if shaking
             ShakeDrink();
+        } else{
+                //If there are 3 ingredients, player must now shake the drink
+                 if(Contents.Count==3)
+                    {
+                    Debug.Log("cup full");
+                    shaking = true;
+                    //ShakeDrink();
+                    }
         }
     }
 
@@ -51,16 +60,10 @@ public class CupScript : MonoBehaviour
             if(Contents.Contains(ingr) ==false){ //check that ingredient isn't already in there
                 Contents.Add(ingr);
                 Debug.Log("cup " + playerID +" added " + ingr);
-             }
+                }
         }
 
-        //If there are 3 ingredients, player must now shake the drink
-        if(Contents.Count==3 && playerNum == playerID)
-        {
-            Debug.Log("cup full");
-            shaking = true;
-            //ShakeDrink();
-        }
+
     }
 
     public void SetControllable(bool con){ //should buttons effect the cup
@@ -82,6 +85,11 @@ public class CupScript : MonoBehaviour
             //Drink is finished shaking
             Debug.Log("Drink done!");
             shaking = false;
+            //ANIM?
+
+            playermatch.Score++;
+            Contents = new List<String>();
+            shakeCount = 0;
         }
     }
 }
