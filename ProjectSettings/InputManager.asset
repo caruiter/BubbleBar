@@ -537,7 +537,7 @@ InputManager:
     m_Name: P4Horizontal
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: i
+    negativeButton: j
     positiveButton: l
     altNegativeButton: 
     altPositiveButton: 

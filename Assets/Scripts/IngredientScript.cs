@@ -21,6 +21,7 @@ public class IngredientScript : MonoBehaviour
     {
      carrying = false;   
      theIngredient = ingredientScriptable.GetIngredient();
+     icon = ingredientScriptable.ingredientIcon;
     }
 
     // Update is called once per frame

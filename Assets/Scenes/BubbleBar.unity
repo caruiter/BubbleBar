@@ -503,6 +503,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5944905102600419975, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 49f5e8c21e3184cb0b447448a5c9b237, type: 2}
     - target: {fileID: 7696538592493739785, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
       propertyPath: m_Name
       value: Glass3
@@ -2849,6 +2853,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5944905102600419975, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 49f5e8c21e3184cb0b447448a5c9b237, type: 2}
     - target: {fileID: 7696538592493739785, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
       propertyPath: m_Name
       value: Glass4
@@ -3117,6 +3125,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5944905102600419975, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 49f5e8c21e3184cb0b447448a5c9b237, type: 2}
     - target: {fileID: 7696538592493739785, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
       propertyPath: m_Name
       value: Glass2
@@ -3935,6 +3947,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5944905102600419975, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 49f5e8c21e3184cb0b447448a5c9b237, type: 2}
     - target: {fileID: 7696538592493739785, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
       propertyPath: m_Name
       value: Glass1
