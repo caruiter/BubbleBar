@@ -90,7 +90,7 @@ namespace Game
 			for (int i = 0; i < gameManager.Players.Length; i++)    // Look at each player
 			{
 				//Debug.Log("here");
-				gameManager.Players[i].Immobilize(); //keep players from moving cursors or cups
+				gameManager.Players[i].Immobilize(false); //keep players from moving cursors or cups
 				Debug.Log("check");
 				Leaderboard.GetLeaderboard();
 				//Leaderboard.AddScore("EXA",0);

@@ -23,12 +23,12 @@ public class PlayerScript : MonoBehaviour
         carried = null;
         Score = 0;
         moveEnabled = true;
+        rb= GetComponent<Rigidbody2D>();
 	}
 
     // Start is called before the first frame update
     void Start()
     {
-        rb= GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -91,9 +91,11 @@ public class PlayerScript : MonoBehaviour
         return playerID;
     }
 
-    public void Immobilize(){
-        rb.velocity = new Vector2(0,0);
-        moveEnabled = false;
-        matchedCup.SetControllable(false);
+    public void Immobilize(bool set){
+        if(rb.velocity.magnitude!=0){
+            rb.velocity = new Vector2(0,0);
+        }
+        moveEnabled = set;
+        matchedCup.SetControllable(set);
     }
 }
