@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game;
 using UnityEngine;
 
 public class CupScript : MonoBehaviour
@@ -8,6 +9,9 @@ public class CupScript : MonoBehaviour
     public List<String> Contents;
     [SerializeField] private int playerID;
     [SerializeField] private PlayerScript playermatch;
+    [SerializeField] private GameManagerMod gm;
+
+    public RecipeScriptableObject recipe;
     private string inputPrefix;	// InputManager uses "P1Button1", "P1Horizontal", etc. 
 
     private bool controllable;
@@ -21,6 +25,8 @@ public class CupScript : MonoBehaviour
         inputPrefix = "P" + playerID; // Set inputPrefix using correct playerID
         controllable = true;
         shaking = false;
+
+        recipe = gm.GetNewRecipe();
     }
 
     // Start is called before the first frame update    
@@ -81,14 +87,27 @@ public class CupScript : MonoBehaviour
             shakeCount++;
         }
 
-        if(shakeCount >= shakeTarget){
-            //Drink is finished shaking
+        if(shakeCount >= shakeTarget){ //Drink is finished shaking
+
             Debug.Log("Drink done!");
             shaking = false;
+
             //ANIM?
 
-            playermatch.Score++;
-            Contents = new List<String>();
+            //check if drink is correct
+            bool correct = true;
+            foreach(string ingr in recipe.ingredients){
+                if(!Contents.Contains(ingr)){
+                    correct =false;
+                }
+            }
+
+            if(correct){ // if correct up points and get new recipe
+                recipe = gm.GetNewRecipe();
+                playermatch.Score++;
+            }
+
+            Contents = new List<String>(); //clear contents and shake count
             shakeCount = 0;
         }
     }

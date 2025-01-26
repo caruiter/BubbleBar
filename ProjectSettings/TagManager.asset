@@ -18,10 +18,10 @@ TagManager:
   - Ingredient
   - Cup
   - Shelf
-  - 
-  - 
-  - 
-  - 
+  - MovingIngredient1
+  - MovingIngredient2
+  - MovingIngredient3
+  - MovingIngredient4
   - 
   - 
   - 
