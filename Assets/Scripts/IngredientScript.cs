@@ -36,6 +36,12 @@ public class IngredientScript : MonoBehaviour
 
     public void PickUp(PlayerScript p){ //player picks up the ingredient
         if(tilGrab!<=0){
+
+            if(carrying == true){ // if being stolen, remove vars from playerscript
+                Physics2D.IgnoreLayerCollision(9+playerCarrying.GetPlayerID(), 8,false); 
+                playerCarrying.ReleaseItem();
+            }
+
             carrying = true;
             playerCarrying = p;
             distance = p.transform.position - this.transform.position;
@@ -48,8 +54,8 @@ public class IngredientScript : MonoBehaviour
 
     public void SetDown(){ //player sets down the ingredient
 
-        this.gameObject.layer = LayerMask.NameToLayer("Ingredient");
         Physics2D.IgnoreLayerCollision(9+playerCarrying.GetPlayerID(), 8,false); 
+        this.gameObject.layer = LayerMask.NameToLayer("Ingredient");
 
         carrying = false;
         playerCarrying.GetComponent<PlayerScript>().ReleaseItem();
