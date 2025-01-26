@@ -11,7 +11,8 @@ public class IngredientScript : MonoBehaviour
     private PlayerScript playerCarrying;
     private Vector2 distance;
     private float tilGrab;
-    private string theIngredient;
+    public string theIngredient;
+    public Sprite icon;
     [SerializeField] IngredientScriptableObject ingredientScriptable;
 
     // Start is called before the first frame update
@@ -70,7 +71,7 @@ public class IngredientScript : MonoBehaviour
             //Physics2D.IgnoreLayerCollision(7, 8,true); 
             Physics2D.IgnoreLayerCollision(9+playerCarrying.GetPlayerID(), 8,true); 
             int id = playerCarrying.GetPlayerID();
-            other.gameObject.GetComponent<CupScript>().AddIngredient(theIngredient, id);
+            other.gameObject.GetComponent<CupScript>().AddIngredient(this, id);
             Debug.Log("clink");
         }
     }

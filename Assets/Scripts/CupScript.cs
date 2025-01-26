@@ -2,7 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game;
+using Microsoft.Unity.VisualStudio.Editor;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CupScript : MonoBehaviour
 {
@@ -10,6 +13,7 @@ public class CupScript : MonoBehaviour
     [SerializeField] private int playerID;
     [SerializeField] private PlayerScript playermatch;
     [SerializeField] private GameManagerMod gm;
+    private List<GameObject> contentIcons;
 
     public RecipeScriptableObject recipe;
     private string inputPrefix;	// InputManager uses "P1Button1", "P1Horizontal", etc. 
@@ -33,6 +37,14 @@ public class CupScript : MonoBehaviour
     void Start()
     {
         Contents = new List<String>();
+        contentIcons = new List<GameObject>();
+        Debug.Log(this.transform.GetChild(0).GetChild(0).GetChild(0).name);
+        contentIcons.Add(this.transform.GetChild(0).GetChild(0).GetChild(0).gameObject);
+        contentIcons.Add(this.transform.GetChild(0).GetChild(0).GetChild(1).gameObject);
+        contentIcons.Add(this.transform.GetChild(0).GetChild(0).GetChild(2).gameObject);
+        foreach(GameObject i in contentIcons){
+            i.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -43,6 +55,9 @@ public class CupScript : MonoBehaviour
          {
             Debug.Log("discarded contents of cup " + playerID);
             Contents = new List<string>();
+            foreach(GameObject g in contentIcons){
+                g.SetActive(false);
+            }
          }
         }
 
@@ -59,14 +74,18 @@ public class CupScript : MonoBehaviour
         }
     }
 
-    public void AddIngredient(string ingr, int playerNum){ //called by IngredientScript class
+    public void AddIngredient(IngredientScript ingr, int playerNum){ //called by IngredientScript class
     Debug.Log(playerNum + " | " + playerID);
         if(Contents.Count<3 && playerNum == playerID){ //check that no more than 3 drinks have been added
             //Debug.Log("true?");
             //if(Contents.Contains(ingr) ==false){ //check that ingredient isn't already in there
-                Contents.Add(ingr);
+                Contents.Add(ingr.theIngredient);
                 Debug.Log("cup " + playerID +" added " + ingr);
                 //}
+                contentIcons[Contents.Count-1].SetActive(true);
+                UnityEngine.UI.Image im = contentIcons[Contents.Count-1].GetComponent<UnityEngine.UI.Image>();
+                //im.sprite = ingr.icon; COMMENT BACK IN AND TEST WHEN WE HAVE THESE
+                
         }
 
 
