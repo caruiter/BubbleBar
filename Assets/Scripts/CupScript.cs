@@ -51,7 +51,7 @@ public class CupScript : MonoBehaviour
     void Update()
     {
         if(controllable && !shaking){ // if allowing control and not being shaken
-         if (Input.GetButtonDown(inputPrefix + "Button" + (3))) //discard contents of cup
+         if (Input.GetButtonDown(inputPrefix + "Button" + (3))&&Contents.Count!=0) //discard contents of cup
          {
             Debug.Log("discarded contents of cup " + playerID);
             Contents = new List<string>();
