@@ -48,17 +48,19 @@ public class StarterController : MonoBehaviour
             for(int i = 0; i<=3; i++){ //look for button prompts to spawn players + cups
                 string inputPrefix = "P"+(i+1);
                 if(Input.GetButtonDown(inputPrefix + "Button" + (1)) || Input.GetButtonDown(inputPrefix + "Button" + (2)) || Input.GetButtonDown(inputPrefix + "Button" + (3))){
-                    Debug.Log("spawn "+ inputPrefix);
-                    players[i].SetActive(true);
-                    players[i].GetComponent<PlayerScript>().Immobilize(false);
-                    activatedPlayers.Add(players[i].GetComponent<PlayerScript>());
-                    cups[i].SetActive(true);
-                    buttonPrompts[i].SetActive(false);
-                    sec = 0;
-                    ct = 0;
+                    if(!activatedPlayers.Contains(players[i].GetComponent<PlayerScript>())){
+                        Debug.Log("spawn "+ inputPrefix);
+                        players[i].SetActive(true);
+                        players[i].GetComponent<PlayerScript>().Immobilize(false);
+                        activatedPlayers.Add(players[i].GetComponent<PlayerScript>());
+                        cups[i].SetActive(true);
+                        buttonPrompts[i].SetActive(false);
+                        sec = 0;
+                        ct = 0;
 
-                    if(activatedPlayers.Count>=4){ //if all players activated just start
-                        sec = 15;
+                        if(activatedPlayers.Count>=4){ //if all players activated just start
+                            sec = 15;
+                        }
                     }
                 }
             }
