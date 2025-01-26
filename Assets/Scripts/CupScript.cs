@@ -26,6 +26,8 @@ public class CupScript : MonoBehaviour
     [SerializeField] private int shakeCount;
     [SerializeField] private int shakeTarget; //change this in inspector to test
 
+    [SerializeField] private List<UnityEngine.UI.Image> cardIcons;
+
 
     void Awake(){
         inputPrefix = "P" + playerID; // Set inputPrefix using correct playerID
@@ -34,6 +36,7 @@ public class CupScript : MonoBehaviour
         anim = GetComponent<Animator>();
 
         recipe = gm.GetNewRecipe();
+        UpdateCard();
     }
 
     // Start is called before the first frame update    
@@ -128,6 +131,7 @@ public class CupScript : MonoBehaviour
             if(correct){ // if correct up points and get new recipe
                 recipe = gm.GetNewRecipe();
                 playermatch.Score++;
+                UpdateCard();
             }
 
             foreach(GameObject i in contentIcons){
@@ -136,6 +140,12 @@ public class CupScript : MonoBehaviour
             anim.SetTrigger("Finish");
             Contents = new List<String>(); //clear contents and shake count
             shakeCount = 0;
+        }
+    }
+
+    public void UpdateCard(){
+        for(int i = 0; i<3; i++){
+            cardIcons[i].sprite = recipe.icons[i];
         }
     }
 }
