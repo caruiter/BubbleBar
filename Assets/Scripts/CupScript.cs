@@ -126,6 +126,9 @@ public class CupScript : MonoBehaviour
                 playermatch.Score++;
             }
 
+            foreach(GameObject i in contentIcons){
+            i.SetActive(false);
+            }
             Contents = new List<String>(); //clear contents and shake count
             shakeCount = 0;
         }
