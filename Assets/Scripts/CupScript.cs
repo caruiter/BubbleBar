@@ -21,6 +21,8 @@ public class CupScript : MonoBehaviour
     private bool controllable;
     private bool shaking;
 
+    private Animator anim;
+
     [SerializeField] private int shakeCount;
     [SerializeField] private int shakeTarget; //change this in inspector to test
 
@@ -29,6 +31,7 @@ public class CupScript : MonoBehaviour
         inputPrefix = "P" + playerID; // Set inputPrefix using correct playerID
         controllable = true;
         shaking = false;
+        anim = GetComponent<Animator>();
 
         recipe = gm.GetNewRecipe();
     }
@@ -55,6 +58,7 @@ public class CupScript : MonoBehaviour
          {
             Debug.Log("discarded contents of cup " + playerID);
             Contents = new List<string>();
+            anim.SetTrigger("Discard");
             foreach(GameObject g in contentIcons){
                 g.SetActive(false);
             }
@@ -84,7 +88,7 @@ public class CupScript : MonoBehaviour
                 //}
                 contentIcons[Contents.Count-1].SetActive(true);
                 UnityEngine.UI.Image im = contentIcons[Contents.Count-1].GetComponent<UnityEngine.UI.Image>();
-                //im.sprite = ingr.icon; COMMENT BACK IN AND TEST WHEN WE HAVE THESE
+                im.sprite = ingr.icon; //COMMENT BACK IN AND TEST WHEN WE HAVE THESE
                 
         }
 
@@ -129,6 +133,7 @@ public class CupScript : MonoBehaviour
             foreach(GameObject i in contentIcons){
             i.SetActive(false);
             }
+            anim.SetTrigger("Finish");
             Contents = new List<String>(); //clear contents and shake count
             shakeCount = 0;
         }
