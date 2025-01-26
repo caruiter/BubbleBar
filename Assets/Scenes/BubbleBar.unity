@@ -676,6 +676,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9200071854684165483, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
+      propertyPath: recipeCard
+      value: 
+      objectReference: {fileID: 1526011052}
+    - target: {fileID: 9200071854684165483, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
       propertyPath: playermatch
       value: 
       objectReference: {fileID: 1406147169}
@@ -1240,7 +1244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &615238377
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3817,7 +3821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1466861133
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3988,7 +3992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1526011053
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4207,6 +4211,10 @@ PrefabInstance:
       propertyPath: playerID
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 9200071854684165483, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
+      propertyPath: recipeCard
+      value: 
+      objectReference: {fileID: 1466861132}
     - target: {fileID: 9200071854684165483, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
       propertyPath: playermatch
       value: 
@@ -4570,6 +4578,10 @@ PrefabInstance:
       propertyPath: playerID
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9200071854684165483, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
+      propertyPath: recipeCard
+      value: 
+      objectReference: {fileID: 1867489177}
     - target: {fileID: 9200071854684165483, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
       propertyPath: playermatch
       value: 
@@ -5072,7 +5084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1867489178
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6012,6 +6024,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 535666333}
+    - target: {fileID: 9200071854684165483, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
+      propertyPath: recipeCard
+      value: 
+      objectReference: {fileID: 615238376}
     - target: {fileID: 9200071854684165483, guid: ac14a2f6e0d694c8d9d4961ceed812bd, type: 3}
       propertyPath: playermatch
       value: 

@@ -27,6 +27,7 @@ public class CupScript : MonoBehaviour
     [SerializeField] private int shakeTarget; //change this in inspector to test
 
     [SerializeField] private List<UnityEngine.UI.Image> cardIcons;
+    [SerializeField] private GameObject recipeCard;
 
 
     void Awake(){
@@ -100,6 +101,11 @@ public class CupScript : MonoBehaviour
 
     public void SetControllable(bool con){ //should buttons effect the cup
         controllable = con;
+        if(con){
+            recipeCard.SetActive(true);
+        } else{
+            recipeCard.SetActive(false);
+        }
     }
 
     public void ShakeDrink()
