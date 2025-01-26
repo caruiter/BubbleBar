@@ -29,6 +29,8 @@ public class CupScript : MonoBehaviour
     [SerializeField] private List<UnityEngine.UI.Image> cardIcons;
     [SerializeField] private GameObject recipeCard;
 
+    [SerializeField] private List<Sprite> cupSprites;
+
 
     void Awake(){
         inputPrefix = "P" + playerID; // Set inputPrefix using correct playerID

@@ -3966,6 +3966,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7531347856996674074, guid: 3a5aa911ff17f684a98f936dba0f67e4, type: 3}
+      propertyPath: ingredientScriptable
+      value: 
+      objectReference: {fileID: 11400000, guid: 155c41445de7feb4984ec8f37efd8571, type: 2}
     - target: {fileID: 8754943872634953197, guid: 3a5aa911ff17f684a98f936dba0f67e4, type: 3}
       propertyPath: m_Name
       value: Soda
