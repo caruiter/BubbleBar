@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4ca0e5cb6a9f457794791857b217254, type: 3}
-  m_Name: CherrySoda
+  m_Name: Creamsicle
   m_EditorClassIdentifier: 
-  drinkName: CHERRYSODA
+  drinkName: CREAMSICLE
   icons:
-  - {fileID: -1263333096, guid: da77d0a658c55654eb28ef29ec6ed28c, type: 3}
-  - {fileID: -1928247947, guid: 6af568f92fa17e54da1b51ec08c65fb2, type: 3}
-  - {fileID: -1928247947, guid: 6af568f92fa17e54da1b51ec08c65fb2, type: 3}
+  - {fileID: 1720450316, guid: da77d0a658c55654eb28ef29ec6ed28c, type: 3}
+  - {fileID: -865670268, guid: 6af568f92fa17e54da1b51ec08c65fb2, type: 3}
+  - {fileID: -2036437287, guid: 835733abdd747de41a8031e648ec89b1, type: 3}
   ingredients:
-  - SODA
-  - CHERRYSYRUP
-  - CHERRYSYRUP
+  - CLEARSODA
+  - VANILLASYRUP
+  - ORANGESYRUP
