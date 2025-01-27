@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4ca0e5cb6a9f457794791857b217254, type: 3}
-  m_Name: Citrus
+  m_Name: LimeSoda
   m_EditorClassIdentifier: 
-  drinkName: CITRUS
+  drinkName: LIMESODA
   icons:
   - {fileID: 1720450316, guid: da77d0a658c55654eb28ef29ec6ed28c, type: 3}
   - {fileID: -461337245, guid: 6af568f92fa17e54da1b51ec08c65fb2, type: 3}
