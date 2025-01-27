@@ -13,8 +13,11 @@ public class PlayerScript : MonoBehaviour
     public bool carrying; //is the player carrying an ingredient?
     public IngredientScript carried;
     private Rigidbody2D rb;
+    private SpriteRenderer spr;
     public int Score;
     private bool moveEnabled;
+
+    [SerializeField] private List<Sprite> handSprites;
 
 	private void Awake()
 	{
@@ -24,11 +27,13 @@ public class PlayerScript : MonoBehaviour
         Score = 0;
         moveEnabled = true;
         rb= GetComponent<Rigidbody2D>();
+        spr= GetComponent<SpriteRenderer>();
 	}
 
     // Start is called before the first frame update
     void Start()
     {
+        spr.sprite = handSprites[0]; //Sets player sprite as open hand to start 
     }
 
     // Update is called once per frame
@@ -81,10 +86,12 @@ public class PlayerScript : MonoBehaviour
     public void GrabItem(IngredientScript ingr){ //accessed by Ingredient class
         carrying = true;
         carried = ingr;
+        spr.sprite = handSprites[1]; //Switches to closed hand sprite when player successfully grabs ingredient
     }
     public void ReleaseItem(){ //accessed by Ingredient class
         carrying = false;
         carried = null;
+        spr.sprite = handSprites[0]; //Switches back to open hand
     }
 
     public int GetPlayerID(){
