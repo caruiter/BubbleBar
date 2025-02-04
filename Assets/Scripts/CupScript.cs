@@ -126,6 +126,7 @@ public class CupScript : MonoBehaviour
             shaking = false;
 
             //ANIM?
+            anim.SetTrigger("Finish");
 
             //check if drink is correct
             bool correct = true;
@@ -144,7 +145,6 @@ public class CupScript : MonoBehaviour
             foreach(GameObject i in contentIcons){
             i.SetActive(false);
             }
-            anim.SetTrigger("Finish");
             Contents = new List<String>(); //clear contents and shake count
             shakeCount = 0;
         }
@@ -154,5 +154,14 @@ public class CupScript : MonoBehaviour
         for(int i = 0; i<3; i++){
             cardIcons[i].sprite = recipe.icons[i];
         }
+    }
+
+
+    public void IsAnimationPlaying(){
+        Debug.Log("ANIMATION PLAYING");
+    }
+
+    public void StillLooping(){
+        Debug.Log("still looping");
     }
 }
