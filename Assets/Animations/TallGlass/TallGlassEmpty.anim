@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GlassEmptyTallCup
+  m_Name: TallGlassEmpty
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1994959403, guid: 004a6189000135142a486cccbdc5a25c, type: 3}
+      value: {fileID: -113108801, guid: 415934a096b9ca746ba5308233d36582, type: 3}
     - time: 1
-      value: {fileID: -1994959403, guid: 004a6189000135142a486cccbdc5a25c, type: 3}
+      value: {fileID: -113108801, guid: 415934a096b9ca746ba5308233d36582, type: 3}
     attribute: m_Sprite
     path: Glass1
     classID: 212
@@ -46,8 +46,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1994959403, guid: 004a6189000135142a486cccbdc5a25c, type: 3}
-    - {fileID: -1994959403, guid: 004a6189000135142a486cccbdc5a25c, type: 3}
+    - {fileID: -113108801, guid: 415934a096b9ca746ba5308233d36582, type: 3}
+    - {fileID: -113108801, guid: 415934a096b9ca746ba5308233d36582, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
