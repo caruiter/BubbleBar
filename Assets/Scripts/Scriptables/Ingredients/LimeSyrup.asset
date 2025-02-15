@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LimeSyrup
   m_EditorClassIdentifier: 
   ingredientName: LIMESYRUP
-  ingredientIcon: {fileID: -461337245, guid: 6af568f92fa17e54da1b51ec08c65fb2, type: 3}
+  ingredientIcon: {fileID: 1096699120, guid: faf95e0312f4b5245816f7e05221ec64, type: 3}

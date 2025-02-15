@@ -15,8 +15,8 @@ MonoBehaviour:
   drinkName: SHIRLEYTEMPLE
   icons:
   - {fileID: 1720450316, guid: da77d0a658c55654eb28ef29ec6ed28c, type: 3}
-  - {fileID: -1928247947, guid: 6af568f92fa17e54da1b51ec08c65fb2, type: 3}
-  - {fileID: -461337245, guid: 6af568f92fa17e54da1b51ec08c65fb2, type: 3}
+  - {fileID: -414627448, guid: faf95e0312f4b5245816f7e05221ec64, type: 3}
+  - {fileID: 1096699120, guid: faf95e0312f4b5245816f7e05221ec64, type: 3}
   ingredients:
   - CLEARSODA
   - CHERRYSYRUP

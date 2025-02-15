@@ -1542,7 +1542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ct: 0
-  roundLength: 60
+  roundLength: 99
   LB: {fileID: 1489810780}
   TimerText: {fileID: 1737394828}
 --- !u!114 &535666333
@@ -3186,6 +3186,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3233799635037789088, guid: 13749336b8495a247ae7b0cdfdf59793, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
     - target: {fileID: 6161637060713377845, guid: 13749336b8495a247ae7b0cdfdf59793, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.75
@@ -3848,6 +3852,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player4Hand
       objectReference: {fileID: 0}
+    - target: {fileID: 3052890216607257709, guid: 2665bee963fc8914f968e1f770db0882, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
     - target: {fileID: 4527264159967886127, guid: 2665bee963fc8914f968e1f770db0882, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.5
@@ -4232,6 +4240,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2314452622838905684, guid: 19420242e6a23bb4693c49745c255d15, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
     - target: {fileID: 3584374149733173867, guid: 19420242e6a23bb4693c49745c255d15, type: 3}
       propertyPath: m_Name
       value: Player3Hand
@@ -6033,6 +6045,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1570599757201822114, guid: bf8484361e429b145ae5c2b9a03759d6, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
     - target: {fileID: 7159487485781417237, guid: bf8484361e429b145ae5c2b9a03759d6, type: 3}
       propertyPath: m_Name
       value: Player2Hand
