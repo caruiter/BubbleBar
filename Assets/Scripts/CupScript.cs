@@ -22,6 +22,8 @@ public class CupScript : MonoBehaviour
 
     private Animator anim;
 
+    [SerializeField] Animator drinkAnim;
+
     [SerializeField] private int shakeCount;
     [SerializeField] private int shakeTarget; //change this in inspector to test
 
@@ -36,9 +38,12 @@ public class CupScript : MonoBehaviour
         controllable = true;
         shaking = false;
         anim = GetComponent<Animator>();
+        //drinkAnim = GetComponentInParent<Animator>();
+        Debug.Log(drinkAnim + "DRINK??");
 
         recipe = gm.GetNewRecipe();
         UpdateCard();
+        EmptyCup();
     }
 
     // Start is called before the first frame update    
@@ -94,6 +99,12 @@ public class CupScript : MonoBehaviour
                 contentIcons[Contents.Count-1].SetActive(true);
                 UnityEngine.UI.Image im = contentIcons[Contents.Count-1].GetComponent<UnityEngine.UI.Image>();
                 im.sprite = ingr.icon; //COMMENT BACK IN AND TEST WHEN WE HAVE THESE
+
+                if(ingr.theIngredient == "SODA"){ //trigger animation if soda
+                    TriggerSodaAnim("SODA");
+                } else if(ingr.theIngredient == "CLEARSODA"){
+                    TriggerSodaAnim("CLEARSODA");
+                }
                 
         }
 
@@ -125,9 +136,6 @@ public class CupScript : MonoBehaviour
             Debug.Log("Drink done!");
             shaking = false;
 
-            //ANIM?
-            anim.SetTrigger("Finish");
-
             //check if drink is correct
             bool correct = true;
             foreach(string ingr in recipe.ingredients){
@@ -137,6 +145,7 @@ public class CupScript : MonoBehaviour
             }
 
             if(correct){ // if correct up points and get new recipe
+                TriggerFullDrinkAnim(recipe.drinkName);
                 recipe = gm.GetNewRecipe();
                 playermatch.Score++;
                 UpdateCard();
@@ -147,6 +156,10 @@ public class CupScript : MonoBehaviour
             }
             Contents = new List<String>(); //clear contents and shake count
             shakeCount = 0;
+
+
+            //ANIM?
+            anim.SetTrigger("Finish");
         }
     }
 
@@ -163,5 +176,85 @@ public class CupScript : MonoBehaviour
 
     public void StillLooping(){
         Debug.Log("still looping");
+    }
+
+    public void TriggerSodaAnim(string type){ //switches drink anim to most recently added soda
+        switch(type){
+            case "CLEARSODA": 
+                drinkAnim.SetTrigger("ClearSoda");
+            break;
+            case "SODA":
+                drinkAnim.SetTrigger("Soda");
+            break;
+        }
+    }
+
+    public void TriggerFullDrinkAnim(string drink){ //switches drink anim to completed drink
+        switch(drink){
+            case "CHERRYCOLA":
+                drinkAnim.SetTrigger("CherryCola");
+                break;
+            case "CHERRYVANILLA":
+                drinkAnim.SetTrigger("CherryVanilla");
+                break;
+            case "CITRUSCOOLER":
+                drinkAnim.SetTrigger("CitrusCooler");
+                break;
+            case "CREAMSODA":
+                drinkAnim.SetTrigger("CreamSoda");
+                break;
+            case "LIMESODA":
+                drinkAnim.SetTrigger("LimeSoda");
+                break;
+            case "ORANGESODA":
+                drinkAnim.SetTrigger("OrangeSoda");
+                break;
+            case "SHIRLEYTEMPLE":
+                drinkAnim.SetTrigger("ShirleyTemple");
+                break;
+        }
+    }
+
+    public string GetCupType(){ //returns type of cup drink requires
+        switch(recipe.drinkName){
+            case "CHERRYCOLA":
+                return "TallCup";
+            case "ORANGESODA":
+                return "TallCup";
+            case "SHIRLEYTEMPLE":
+                return "ShortCup";
+            case "CITRUSCOOLER":
+                return "ShortCup";
+            case "CHERRYVANILLA":
+                return "WineGlass";
+            case "CREAMSODA":
+                return "WineGlass";
+            case "LIMESODA":
+                return "TallGlass";
+            case "CREAMSICLE":
+                return "TallGlass";
+            default:
+                Debug.Log("cup type fail");
+                return null;
+        }
+    }
+
+    public void EmptyCup(){ //set animation trigger based on cup type
+        string type = GetCupType();
+        Debug.Log("empty cup? " + type);
+        switch(type){
+            case "TallCup":
+                drinkAnim.SetTrigger("EmptyTallCup");
+                break;
+            case "ShortCup":
+                drinkAnim.SetTrigger("EmptyShortCup");
+                break;
+            case "WineGlass":
+                drinkAnim.SetTrigger("EmptyWineGlass");
+                break;
+            case "TallGlass":
+                drinkAnim.SetTrigger("EmptyTallGlass");
+                break;
+        }
     }
 }

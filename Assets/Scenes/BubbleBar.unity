@@ -354,6 +354,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &163059156 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8872514969170730641, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+  m_PrefabInstance: {fileID: 2088922123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &173718221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1148,6 +1153,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2a236789bb9d184ea1e3dfaccaaed42, type: 3}
+--- !u!95 &423399239 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8872514969170730641, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+  m_PrefabInstance: {fileID: 752740240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &478731169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &535666332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2055,6 +2065,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkAnim
+      value: 
+      objectReference: {fileID: 423399239}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: recipeCard
       value: 
       objectReference: {fileID: 1526011052}
@@ -2100,7 +2114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1440077488307143533, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: m_Name
-      value: Glass3
+      value: Glass1
       objectReference: {fileID: 0}
     - target: {fileID: 2102760076043090981, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2342,6 +2356,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &770120244 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8872514969170730641, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+  m_PrefabInstance: {fileID: 1901969328}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &790653806
 GameObject:
   m_ObjectHideFlags: 0
@@ -3737,6 +3756,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162699783}
   m_CullTransparentMesh: 1
+--- !u!95 &1186232727 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8872514969170730641, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+  m_PrefabInstance: {fileID: 5653996501663972071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1204900361
 GameObject:
   m_ObjectHideFlags: 0
@@ -5837,6 +5861,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkAnim
+      value: 
+      objectReference: {fileID: 770120244}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: recipeCard
       value: 
       objectReference: {fileID: 1466861132}
@@ -5882,7 +5910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1440077488307143533, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: m_Name
-      value: Glass4
+      value: Glass1
       objectReference: {fileID: 0}
     - target: {fileID: 2102760076043090981, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6661,6 +6689,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkAnim
+      value: 
+      objectReference: {fileID: 163059156}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: recipeCard
       value: 
       objectReference: {fileID: 1867489177}
@@ -6706,7 +6738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1440077488307143533, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: m_Name
-      value: Glass2
+      value: Glass1
       objectReference: {fileID: 0}
     - target: {fileID: 2102760076043090981, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6958,6 +6990,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 535666333}
     - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkAnim
+      value: 
+      objectReference: {fileID: 1186232727}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: recipeCard
       value: 
       objectReference: {fileID: 615238376}
@@ -6977,6 +7013,30 @@ PrefabInstance:
       propertyPath: cardIcons.Array.data[2]
       value: 
       objectReference: {fileID: 1737546615}
+    - target: {fileID: 627230845415271740, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 627230845415271740, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 627230845415271740, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 627230845415271740, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 627230845415271740, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 627230845415271740, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2102760076043090981, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.75
@@ -7017,9 +7077,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2589836423081343434, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589836423081343434, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589836423081343434, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589836423081343434, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589836423081343434, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589836423081343434, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4014693355002868348, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: m_Name
       value: Glass1Anchor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506981021804016812, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506981021804016812, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506981021804016812, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506981021804016812, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506981021804016812, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506981021804016812, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
