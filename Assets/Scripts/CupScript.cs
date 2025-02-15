@@ -212,6 +212,9 @@ public class CupScript : MonoBehaviour
             case "SHIRLEYTEMPLE":
                 drinkAnim.SetTrigger("ShirleyTemple");
                 break;
+            case "CREAMSICLE":
+                drinkAnim.SetTrigger("Creamsicle");
+                break;
         }
     }
 
