@@ -9,7 +9,7 @@ public class PlayerScript : MonoBehaviour
 
 
 	private string inputPrefix;	// InputManager uses "P1Button1", "P1Horizontal", etc. 
-    private float playerSpeed = 4; //how fast does the player move?
+    private float playerSpeed = 5; //how fast does the player move?
     public bool carrying; //is the player carrying an ingredient?
     public IngredientScript carried;
     private Rigidbody2D rb;

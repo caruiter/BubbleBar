@@ -15,8 +15,8 @@ MonoBehaviour:
   drinkName: ORANGESODA
   icons:
   - {fileID: -1263333096, guid: da77d0a658c55654eb28ef29ec6ed28c, type: 3}
-  - {fileID: -2036437287, guid: 835733abdd747de41a8031e648ec89b1, type: 3}
-  - {fileID: -2036437287, guid: 835733abdd747de41a8031e648ec89b1, type: 3}
+  - {fileID: 782789273, guid: faf95e0312f4b5245816f7e05221ec64, type: 3}
+  - {fileID: 782789273, guid: faf95e0312f4b5245816f7e05221ec64, type: 3}
   ingredients:
   - SODA
   - ORANGESYRUP

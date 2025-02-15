@@ -15,8 +15,8 @@ MonoBehaviour:
   drinkName: CHERRYVANILLA
   icons:
   - {fileID: -1263333096, guid: da77d0a658c55654eb28ef29ec6ed28c, type: 3}
-  - {fileID: -1928247947, guid: 6af568f92fa17e54da1b51ec08c65fb2, type: 3}
-  - {fileID: -865670268, guid: 6af568f92fa17e54da1b51ec08c65fb2, type: 3}
+  - {fileID: -414627448, guid: faf95e0312f4b5245816f7e05221ec64, type: 3}
+  - {fileID: 2088512813, guid: faf95e0312f4b5245816f7e05221ec64, type: 3}
   ingredients:
   - SODA
   - CHERRYSYRUP
