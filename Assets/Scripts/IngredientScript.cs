@@ -56,7 +56,8 @@ public class IngredientScript : MonoBehaviour
 
     public void SetDown(){ //player sets down the ingredient
 
-        Physics2D.IgnoreLayerCollision(9+playerCarrying.GetPlayerID(), 8,false); 
+        Physics2D.IgnoreLayerCollision(9+playerCarrying.GetPlayerID(), 8,false);
+        GetComponent<CapsuleCollider2D>().isTrigger = false; 
         this.gameObject.layer = LayerMask.NameToLayer("Ingredient");
 
         carrying = false;
@@ -67,13 +68,27 @@ public class IngredientScript : MonoBehaviour
         //Physics2D.IgnoreLayerCollision(7, 8,false); 
     }
 
-    public void OnCollisionEnter2D(Collision2D other){
-        if(other.gameObject.CompareTag("Cup") && carrying){
+    public void OnCollisionEnter2D(Collision2D other){ 
+        if(other.gameObject.CompareTag("Cup") && carrying){// ingredient collides with cup, disable collider and add ingredient
             //Physics2D.IgnoreLayerCollision(7, 8,true); 
-            Physics2D.IgnoreLayerCollision(9+playerCarrying.GetPlayerID(), 8,true); 
+            //Physics2D.IgnoreLayerCollision(9+playerCarrying.GetPlayerID(), 8,true); 
+            GetComponent<CapsuleCollider2D>().isTrigger = true;
             int id = playerCarrying.GetPlayerID();
             other.gameObject.GetComponent<CupScript>().AddIngredient(this, id);
             Debug.Log("clink");
+        }
+    }
+
+    public void OnCollisionExit2D(Collision2D other) {
+        /*if(other.gameObject.CompareTag("Cup")){//ingredient leaves cup, enable collider
+            Physics2D.IgnoreLayerCollision(9+playerCarrying.GetPlayerID(), 8,false);
+        }*/
+    }
+
+    public void OnTriggerExit2D(Collider2D other) {
+        if(other.gameObject.CompareTag("Cup")){//ingredient leaves cup, enable collider
+            //Physics2D.IgnoreLayerCollision(9+playerCarrying.GetPlayerID(), 8,false);
+            GetComponent<CapsuleCollider2D>().isTrigger = false;
         }
     }
 }

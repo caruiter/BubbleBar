@@ -63,7 +63,8 @@ public class CupScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(controllable && !shaking){ // if allowing control and not being shaken
+        //if(controllable && !shaking){ // if allowing control and not being shaken
+        if(controllable){ // if allowing control and not being shaken
          if (Input.GetButtonDown(inputPrefix + "Button" + (3))&&Contents.Count!=0) //discard contents of cup
          {
             Debug.Log("discarded contents of cup " + playerID);
@@ -78,13 +79,24 @@ public class CupScript : MonoBehaviour
         if(shaking){ //allow button mashing if shaking
             ShakeDrink();
         } else{
-                //If there are 3 ingredients, player must now shake the drink
-                 if(Contents.Count==3)
-                    {
-                    Debug.Log("cup full");
-                    shaking = true;
-                    //ShakeDrink();
+            //If there are 3 ingredients, player must now shake the drink
+            if(Contents.Count==3)
+            {
+                Debug.Log("cup full");
+                shaking = true;
+
+                //switch over to new animation if correct
+                bool correct = true;
+                foreach(string ingr in recipe.ingredients){
+                    if(!Contents.Contains(ingr)){
+                        correct =false;
                     }
+                }
+
+                if(correct){ // if correct up points and get new recipe
+                    TriggerFullDrinkAnim(recipe.drinkName);
+                }
+            }
         }
     }
 
@@ -124,7 +136,8 @@ public class CupScript : MonoBehaviour
     {
         //Put code for turning the emptying cup function off here
         
-        if(Input.GetButtonDown(inputPrefix + "Button" + (1)) || Input.GetButtonDown(inputPrefix + "Button" + (2)) || Input.GetButtonDown(inputPrefix + "Button" + (3)))
+        //if(Input.GetButtonDown(inputPrefix + "Button" + (1)) || Input.GetButtonDown(inputPrefix + "Button" + (2)) || Input.GetButtonDown(inputPrefix + "Button" + (3)))
+        if(Input.GetButtonDown(inputPrefix + "Button" + (2))) //modified to only count middle button
         { 
             //number of shakes goes up each time the player presses an input
             Debug.Log("shakes: " + shakeCount);
@@ -145,7 +158,7 @@ public class CupScript : MonoBehaviour
             }
 
             if(correct){ // if correct up points and get new recipe
-                TriggerFullDrinkAnim(recipe.drinkName);
+                //TriggerFullDrinkAnim(recipe.drinkName);
                 recipe = gm.GetNewRecipe();
                 playermatch.Score++;
                 UpdateCard();
