@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -18,6 +19,8 @@ public class PlayerScript : MonoBehaviour
     private bool moveEnabled;
 
     [SerializeField] private List<Sprite> handSprites;
+    [SerializeField] private TextMeshProUGUI playerScoreText;
+
 
 	private void Awake()
 	{
@@ -62,10 +65,10 @@ public class PlayerScript : MonoBehaviour
 
                          foreach (var otherCollider in otherColliders)
                             {
-                                Debug.Log(otherCollider.transform.name);
+                                //Debug.Log(otherCollider.transform.name);
                                 if (otherCollider.gameObject.CompareTag("Ingredient"))
                                     {
-                                        Debug.Log(otherCollider.transform.name + "!");
+                                       // Debug.Log(otherCollider.transform.name + "!");
                                         otherCollider.GetComponent<IngredientScript>().PickUp(this);
                                         break;
                                     }
@@ -104,5 +107,10 @@ public class PlayerScript : MonoBehaviour
         }
         moveEnabled = set;
         matchedCup.SetControllable(set);
+    }
+
+    public void IncreaseScore(){
+        Score++;
+        playerScoreText.text = ""+Score;
     }
 }

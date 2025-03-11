@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using Game;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +21,8 @@ public class CupScript : MonoBehaviour
 
     private bool controllable;
     private bool shaking;
+    [SerializeField] private GameObject shakePrompt;
+    [SerializeField] private GameObject discardPrompt;
 
     private Animator anim;
 
@@ -78,7 +82,7 @@ public class CupScript : MonoBehaviour
 
         if(shaking){ //allow button mashing if shaking
             ShakeDrink();
-        } else{
+        } /*else{
             //If there are 3 ingredients, player must now shake the drink
             if(Contents.Count==3)
             {
@@ -93,11 +97,15 @@ public class CupScript : MonoBehaviour
                     }
                 }
 
+                Debug.Log("got here");
                 if(correct){ // if correct up points and get new recipe
                     TriggerFullDrinkAnim(recipe.drinkName);
+                    shakePrompt.SetActive(true);
+                } else{
+                    discardPrompt.SetActive(true);
                 }
             }
-        }
+        }*/
     }
 
     public void AddIngredient(IngredientScript ingr, int playerNum){ //called by IngredientScript class
@@ -105,18 +113,40 @@ public class CupScript : MonoBehaviour
         if(Contents.Count<3 && playerNum == playerID){ //check that no more than 3 drinks have been added
             //Debug.Log("true?");
             //if(Contents.Contains(ingr) ==false){ //check that ingredient isn't already in there
-                Contents.Add(ingr.theIngredient);
-                Debug.Log("cup " + playerID +" added " + ingr);
-                //}
-                contentIcons[Contents.Count-1].SetActive(true);
-                UnityEngine.UI.Image im = contentIcons[Contents.Count-1].GetComponent<UnityEngine.UI.Image>();
-                im.sprite = ingr.icon; //COMMENT BACK IN AND TEST WHEN WE HAVE THESE
+            Contents.Add(ingr.theIngredient);
+            Debug.Log("cup " + playerID +" added " + ingr);
+            //}
+            contentIcons[Contents.Count-1].SetActive(true);
+            UnityEngine.UI.Image im = contentIcons[Contents.Count-1].GetComponent<UnityEngine.UI.Image>();
+            im.sprite = ingr.icon; //COMMENT BACK IN AND TEST WHEN WE HAVE THESE
 
-                if(ingr.theIngredient == "SODA"){ //trigger animation if soda
-                    TriggerSodaAnim("SODA");
-                } else if(ingr.theIngredient == "CLEARSODA"){
-                    TriggerSodaAnim("CLEARSODA");
+            if(ingr.theIngredient == "SODA"){ //trigger animation if soda
+                TriggerSodaAnim("SODA");
+            } else if(ingr.theIngredient == "CLEARSODA"){
+                TriggerSodaAnim("CLEARSODA");
+            }
+                        //If there are 3 ingredients, player must now shake the drink
+            if(Contents.Count==3)
+            {
+                Debug.Log("cup full");
+                shaking = true;
+
+                //switch over to new animation if correct
+                bool correct = true;
+                foreach(string ingre in recipe.ingredients){
+                    if(!Contents.Contains(ingre)){
+                        correct =false;
+                    }
                 }
+
+                Debug.Log("got here");
+                if(correct){ // if correct up points and get new recipe
+                    TriggerFullDrinkAnim(recipe.drinkName);
+                    shakePrompt.SetActive(true);
+                } else{
+                    discardPrompt.SetActive(true);
+                }
+            }
                 
         }
 
@@ -160,7 +190,8 @@ public class CupScript : MonoBehaviour
             if(correct){ // if correct up points and get new recipe
                 //TriggerFullDrinkAnim(recipe.drinkName);
                 recipe = gm.GetNewRecipe();
-                playermatch.Score++;
+                //playermatch.Score++;
+                playermatch.IncreaseScore();
                 UpdateCard();
             }
 
@@ -170,9 +201,12 @@ public class CupScript : MonoBehaviour
             Contents = new List<String>(); //clear contents and shake count
             shakeCount = 0;
 
-
             //ANIM?
             anim.SetTrigger("Finish");
+
+            //UI
+            discardPrompt.SetActive(false);
+            shakePrompt.SetActive(false);
         }
     }
 
@@ -272,5 +306,9 @@ public class CupScript : MonoBehaviour
                 drinkAnim.SetTrigger("EmptyTallGlass");
                 break;
         }
+
+        shaking = false;
+        discardPrompt.SetActive(false);
+        shakePrompt.SetActive(false);
     }
 }
