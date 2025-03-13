@@ -80,8 +80,7 @@ public class CupScript : MonoBehaviour
          }
         }
 
-        if(shaking)
-        { //allow button mashing if shaking
+        if(shaking){ //allow button mashing if shaking
             ShakeDrink();
         } /*else{
             //If there are 3 ingredients, player must now shake the drink
@@ -134,9 +133,16 @@ public class CupScript : MonoBehaviour
 
                 //switch over to new animation if correct
                 bool correct = true;
+                List<string> testCon = new List<string>();
+                foreach(string ingre in Contents){
+                    testCon.Add(ingre);
+                }
+
                 foreach(string ingre in recipe.ingredients){
-                    if(!Contents.Contains(ingre)){
-                        correct =false;
+                    if(!testCon.Contains(ingre)){
+                        correct = false;
+                    } else{
+                        testCon.Remove(ingre);
                     }
                 }
 
@@ -182,9 +188,16 @@ public class CupScript : MonoBehaviour
 
             //check if drink is correct
             bool correct = true;
-            foreach(string ingr in recipe.ingredients){
-                if(!Contents.Contains(ingr)){
-                    correct =false;
+            List<string> testCon = new List<string>();
+            foreach(string ingre in Contents){
+                testCon.Add(ingre);
+            }
+
+            foreach(string ingre in recipe.ingredients){
+                if(!testCon.Contains(ingre)){
+                    correct = false;
+                } else{
+                    testCon.Remove(ingre);
                 }
             }
 
