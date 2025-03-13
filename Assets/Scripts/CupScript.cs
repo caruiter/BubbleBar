@@ -80,7 +80,8 @@ public class CupScript : MonoBehaviour
          }
         }
 
-        if(shaking){ //allow button mashing if shaking
+        if(shaking)
+        { //allow button mashing if shaking
             ShakeDrink();
         } /*else{
             //If there are 3 ingredients, player must now shake the drink
