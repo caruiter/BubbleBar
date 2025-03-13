@@ -36,6 +36,9 @@ public class CupScript : MonoBehaviour
 
     [SerializeField] private List<Sprite> cupSprites;
 
+    [SerializeField] private AudioClip sodaPourSound;
+    [SerializeField] private AudioClip syrupPourSound;
+
 
     void Awake(){
         inputPrefix = "P" + playerID; // Set inputPrefix using correct playerID
@@ -122,10 +125,17 @@ public class CupScript : MonoBehaviour
 
             if(ingr.theIngredient == "SODA"){ //trigger animation if soda
                 TriggerSodaAnim("SODA");
+                AudioManager.PlaySound(sodaPourSound);
             } else if(ingr.theIngredient == "CLEARSODA"){
                 TriggerSodaAnim("CLEARSODA");
+                AudioManager.PlaySound(sodaPourSound);
+            } else if(ingr.theIngredient != "SODA" && ingr.theIngredient != "CLEARSODA"){
+                AudioManager.PlaySound(syrupPourSound);
             }
-                        //If there are 3 ingredients, player must now shake the drink
+
+
+
+            //If there are 3 ingredients, player must now shake the drink
             if(Contents.Count==3)
             {
                 Debug.Log("cup full");
