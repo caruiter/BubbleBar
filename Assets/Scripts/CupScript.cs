@@ -36,8 +36,14 @@ public class CupScript : MonoBehaviour
 
     [SerializeField] private List<Sprite> cupSprites;
 
+    [Header("SFX")]
     [SerializeField] private AudioClip sodaPourSound;
     [SerializeField] private AudioClip syrupPourSound;
+    [SerializeField] private AudioClip drinkDiscardSound;
+    [SerializeField] private AudioClip drinkSlideSound;
+    [SerializeField] private AudioClip drinkShakeSound;
+    [SerializeField] private AudioClip pointSound;
+    //[SerializeField] private AudioSource CupAudioSource;
 
 
     void Awake(){
@@ -80,6 +86,8 @@ public class CupScript : MonoBehaviour
             foreach(GameObject g in contentIcons){
                 g.SetActive(false);
             }
+            //Play discard drink sound
+            AudioManager.PlaySound(drinkDiscardSound);
          }
         }
 
@@ -125,11 +133,11 @@ public class CupScript : MonoBehaviour
 
             if(ingr.theIngredient == "SODA"){ //trigger animation if soda
                 TriggerSodaAnim("SODA");
-                AudioManager.PlaySound(sodaPourSound);
+                AudioManager.PlaySound(sodaPourSound); //play soda sound
             } else if(ingr.theIngredient == "CLEARSODA"){
                 TriggerSodaAnim("CLEARSODA");
-                AudioManager.PlaySound(sodaPourSound);
-            } else if(ingr.theIngredient != "SODA" && ingr.theIngredient != "CLEARSODA"){
+                AudioManager.PlaySound(sodaPourSound); //play soda sound 
+            } else if(ingr.theIngredient != "SODA" && ingr.theIngredient != "CLEARSODA"){ //Play syrup sound if not soda
                 AudioManager.PlaySound(syrupPourSound);
             }
 
@@ -179,6 +187,7 @@ public class CupScript : MonoBehaviour
         }
     }
 
+    //player is shaking drink
     public void ShakeDrink()
     {
         //Put code for turning the emptying cup function off here
@@ -189,6 +198,9 @@ public class CupScript : MonoBehaviour
             //number of shakes goes up each time the player presses an input
             Debug.Log("shakes: " + shakeCount);
             shakeCount++;
+
+            AudioManager.PlaySound(drinkShakeSound);
+
         }
 
         if(shakeCount >= shakeTarget){ //Drink is finished shaking
@@ -227,6 +239,10 @@ public class CupScript : MonoBehaviour
 
             //ANIM?
             anim.SetTrigger("Finish");
+
+            //Sound plays 
+            AudioManager.PlaySound(drinkSlideSound);
+            AudioManager.PlaySound(pointSound);
 
             //UI
             discardPrompt.SetActive(false);

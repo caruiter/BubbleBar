@@ -1343,7 +1343,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295047822}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -1439,7 +1439,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295047822}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f817ffd44e92d1e4fa350336a357a4e8, type: 3}
   m_Name: 
@@ -2634,6 +2634,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 423399239}
     - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: pointSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b31e13c030dbcbd48b32f4960508063f, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: recipeCard
       value: 
       objectReference: {fileID: 1526011052}
@@ -2657,6 +2661,18 @@ PrefabInstance:
       propertyPath: syrupPourSound
       value: 
       objectReference: {fileID: 8300000, guid: 5111543f673be58459b5a980f8147f12, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkShakeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 622543b41e5a77444b8d2b6a796e41e8, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkSlideSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ca92c5304e7408b4f8878692d5cf6dd7, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkDiscardSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bb39ce3063ba23647afec77ca2e652fb, type: 3}
     - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: cardIcons.Array.data[0]
       value: 
@@ -7604,6 +7620,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 770120244}
     - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: pointSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b31e13c030dbcbd48b32f4960508063f, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: recipeCard
       value: 
       objectReference: {fileID: 1466861132}
@@ -7627,6 +7647,18 @@ PrefabInstance:
       propertyPath: syrupPourSound
       value: 
       objectReference: {fileID: 8300000, guid: 5111543f673be58459b5a980f8147f12, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkShakeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 622543b41e5a77444b8d2b6a796e41e8, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkSlideSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ca92c5304e7408b4f8878692d5cf6dd7, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkDiscardSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bb39ce3063ba23647afec77ca2e652fb, type: 3}
     - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: cardIcons.Array.data[0]
       value: 
@@ -8456,6 +8488,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 163059156}
     - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: pointSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b31e13c030dbcbd48b32f4960508063f, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: recipeCard
       value: 
       objectReference: {fileID: 1867489177}
@@ -8479,6 +8515,18 @@ PrefabInstance:
       propertyPath: syrupPourSound
       value: 
       objectReference: {fileID: 8300000, guid: 5111543f673be58459b5a980f8147f12, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkShakeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 622543b41e5a77444b8d2b6a796e41e8, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkSlideSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ca92c5304e7408b4f8878692d5cf6dd7, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkDiscardSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bb39ce3063ba23647afec77ca2e652fb, type: 3}
     - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: cardIcons.Array.data[0]
       value: 
@@ -9117,6 +9165,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1186232727}
     - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: pointSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b31e13c030dbcbd48b32f4960508063f, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: recipeCard
       value: 
       objectReference: {fileID: 615238376}
@@ -9140,6 +9192,18 @@ PrefabInstance:
       propertyPath: syrupPourSound
       value: 
       objectReference: {fileID: 8300000, guid: 5111543f673be58459b5a980f8147f12, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkShakeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 622543b41e5a77444b8d2b6a796e41e8, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkSlideSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ca92c5304e7408b4f8878692d5cf6dd7, type: 3}
+    - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
+      propertyPath: drinkDiscardSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bb39ce3063ba23647afec77ca2e652fb, type: 3}
     - target: {fileID: 476976190494460175, guid: eab73903edaac4ed98aa19fe7384eda8, type: 3}
       propertyPath: cardIcons.Array.data[0]
       value: 
