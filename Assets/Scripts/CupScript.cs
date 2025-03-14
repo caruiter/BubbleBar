@@ -331,6 +331,10 @@ public class CupScript : MonoBehaviour
 
     public void EmptyCup(){ //set animation trigger based on cup type
         string type = GetCupType();
+
+        drinkAnim.ResetTrigger("Soda");
+        drinkAnim.ResetTrigger("ClearSoda");
+
         Debug.Log("empty cup? " + type);
         switch(type){
             case "TallCup":

@@ -11,6 +11,8 @@ public class IngredientScript : MonoBehaviour
     private PlayerScript playerCarrying;
     private Vector2 distance;
     private float tilGrab;
+    private bool cooldownAdd;
+    private float tilAdd;
     public string theIngredient;
     public Sprite icon;
     [SerializeField] IngredientScriptableObject ingredientScriptable;
@@ -19,7 +21,8 @@ public class IngredientScript : MonoBehaviour
 
     void Start()
     {
-     carrying = false;   
+     carrying = false;
+     cooldownAdd = false;   
      theIngredient = ingredientScriptable.GetIngredient();
      icon = ingredientScriptable.ingredientIcon;
     }
@@ -33,6 +36,14 @@ public class IngredientScript : MonoBehaviour
 
         if(tilGrab>0){
             tilGrab -= Time.deltaTime;
+        }
+
+        if(cooldownAdd){
+            tilAdd -= Time.deltaTime;
+            if(tilAdd <=0){
+                cooldownAdd = false;
+                GetComponent<CapsuleCollider2D>().isTrigger = false;
+            }
         }
     }
 
@@ -88,7 +99,9 @@ public class IngredientScript : MonoBehaviour
     public void OnTriggerExit2D(Collider2D other) {
         if(other.gameObject.CompareTag("Cup")){//ingredient leaves cup, enable collider
             //Physics2D.IgnoreLayerCollision(9+playerCarrying.GetPlayerID(), 8,false);
-            GetComponent<CapsuleCollider2D>().isTrigger = false;
+            //GetComponent<CapsuleCollider2D>().isTrigger = false;
+            cooldownAdd = true;
+            tilAdd = .1f;
         }
     }
 }
