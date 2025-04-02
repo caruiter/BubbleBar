@@ -121,6 +121,8 @@ namespace Game
 				}
 			}
 			container.gameObject.SetActive(false);
+			Debug.Log("Quit Game");
+			Application.Quit();
 		}
 
 		public void AddEntry(string entry)
