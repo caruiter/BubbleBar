@@ -15,9 +15,16 @@ public class GameTimerScript : MonoBehaviour
     private bool boardup;
     // Start is called before the first frame update
 
+    [SerializeField] private GameObject scoreScreen;
+    [SerializeField] private List<TextMeshProUGUI> scoreTexts;
+    [SerializeField] private List<TextMeshProUGUI> playerRankings;
+    private bool showingRanks;
+
     void Awake(){
         Time.timeScale = 1;
         boardup = false;
+        showingRanks = false;
+        scoreScreen.SetActive(false);
     }
     void Start()
     {
@@ -45,11 +52,54 @@ public class GameTimerScript : MonoBehaviour
             if(sec >= roundLength){
                 //Time.timeScale = 0;
                 boardup = true;
-                LB.EnterHighScores();
+                //LB.EnterHighScores();
+                ShowRanks();
+                showingRanks = true;
                 Debug.Log("scores??");
             } 
+        } else{
+            if(showingRanks){
+                for(int a = 0; a<4; a++){ //look for input from each player
+                string inputPrefix = "P"+(a+1);
+                if(Input.GetButtonDown(inputPrefix + "Button" + (1)) || Input.GetButtonDown(inputPrefix + "Button" + (2)) || Input.GetButtonDown(inputPrefix + "Button" + (3))){
+                    ShowLeaderBoard();
+                    showingRanks = false;
+                }
+            } 
+        }
+            
         }
 
         
+    }
+
+    public void ShowLeaderBoard(){ //input top scores, calld after showRanks
+        LB.EnterHighScores();
+        scoreScreen.SetActive(false);
+    }
+
+    private void ShowRanks(){ //show player ranks after end of game
+        GameManagerMod GM = GameObject.Find("GameManager").GetComponent<GameManagerMod>();
+        scoreScreen.SetActive(true);
+
+        List<int> sorting = new List<int>(); //put scores in list and sort
+        for(int s = 0; s < 4;s++){
+           sorting.Add(GM.players[s].Score);
+        }
+        sorting.Sort();
+
+        for(int i =0; i<4; i++){
+            scoreTexts[i].text = GM.players[i].Score.ToString(); //display player's score
+
+            if(sorting[3]==GM.players[i].Score){//determine and show rank
+                playerRankings[i].text = "1st";
+            } else if(sorting[2]==GM.players[i].Score){
+                playerRankings[i].text = "2nd";
+            } else if(sorting[1]==GM.players[i].Score){
+                playerRankings[i].text = "3rd";
+            } else{
+                playerRankings[i].text = "4th";
+            }
+        }
     }
 }

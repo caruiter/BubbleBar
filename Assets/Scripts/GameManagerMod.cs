@@ -8,7 +8,7 @@ namespace Game
 	{
 		public PlayerScript[] Players => players;
 
-		[SerializeField] private PlayerScript[] players;
+		[SerializeField] public PlayerScript[] players;
 		[SerializeField] private LeaderboardManagerMod leaderboardManager;
 
 		[SerializeField] private List<CupScript> cups;

@@ -73,7 +73,12 @@ public class StarterController : MonoBehaviour
             if(sec>=waitTime){ //display time until game starts
                 started = true;
                 timerText.text = "0:00";
-                StartGame();
+                if(activatedPlayers.Count == 0){
+                    Debug.Log("no players");
+                    Application.Quit();
+                } else{
+                    StartGame();
+                }
             } else{
                 int display = (int)(waitTime-sec);
                 if(display<10){
@@ -97,6 +102,11 @@ public class StarterController : MonoBehaviour
 
         foreach(PlayerScript p in activatedPlayers){//let the players move
             p.Immobilize(true);
+        }
+
+        if(activatedPlayers.Count == 0 || activatedPlayers == null){ //if no players have been selected, quit game
+            Debug.Log("no players");
+            Application.Quit();
         }
         
     }
