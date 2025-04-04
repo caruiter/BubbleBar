@@ -2297,7 +2297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ct: 0
-  roundLength: 10
+  roundLength: 75
   LB: {fileID: 1489810780}
   TimerText: {fileID: 1737394828}
   scoreScreen: {fileID: 2042039765}
