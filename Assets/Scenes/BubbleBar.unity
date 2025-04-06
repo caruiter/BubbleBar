@@ -5451,7 +5451,7 @@ MonoBehaviour:
   - {fileID: 849386679}
   - {fileID: 825547773}
   - {fileID: 1113776772}
-  instructionsPrompt: {fileID: 0}
+  instructionsPrompt: {fileID: 637154332}
 --- !u!114 &1061731542
 MonoBehaviour:
   m_ObjectHideFlags: 0

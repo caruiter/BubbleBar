@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Game;
 using TMPro;
 using UnityEngine;
@@ -19,6 +20,7 @@ public class GameTimerScript : MonoBehaviour
     [SerializeField] private List<TextMeshProUGUI> scoreTexts;
     [SerializeField] private List<TextMeshProUGUI> playerRankings;
     private bool showingRanks;
+    private float rankTimer;
 
     void Awake(){
         Time.timeScale = 1;
@@ -30,6 +32,7 @@ public class GameTimerScript : MonoBehaviour
     {
         ct = 0;
         sec = 0;
+        rankTimer = 0;
     }
 
     // Update is called once per frame
@@ -39,11 +42,22 @@ public class GameTimerScript : MonoBehaviour
             if(ct>=1){
                 sec++;
                 ct = 0;
+                float tempTimer = roundLength - sec;
+                int min = (int)tempTimer / 60;
+                int tempSec = (int)tempTimer % 60;
+
+                if(tempSec<10){
+                    TimerText.text = min + ":0"+tempSec;
+                } else{
+                    TimerText.text = min+ ":" +tempSec;
+                }
+                /*
                 if((roundLength-sec)<10){
-                     TimerText.text = "0:0" + (roundLength-sec);
+                    TimerText.text = "0:0" + (roundLength -sec);
                 } else{
                     TimerText.text = "0:" + (roundLength-sec);
-                }
+                }*/
+                
 
             }else{
                 ct+=Time.deltaTime;
@@ -59,14 +73,17 @@ public class GameTimerScript : MonoBehaviour
             } 
         } else{
             if(showingRanks){
-                for(int a = 0; a<4; a++){ //look for input from each player
-                string inputPrefix = "P"+(a+1);
-                if(Input.GetButtonDown(inputPrefix + "Button" + (1)) || Input.GetButtonDown(inputPrefix + "Button" + (2)) || Input.GetButtonDown(inputPrefix + "Button" + (3))){
-                    ShowLeaderBoard();
-                    showingRanks = false;
+                rankTimer+=Time.deltaTime;
+                if(rankTimer >=10){
+                    for(int a = 0; a<4; a++){ //look for input from each player
+                        string inputPrefix = "P"+(a+1);
+                        if(Input.GetButtonDown(inputPrefix + "Button" + (1)) || Input.GetButtonDown(inputPrefix + "Button" + (2)) || Input.GetButtonDown(inputPrefix + "Button" + (3))){
+                            ShowLeaderBoard();
+                            showingRanks = false;
+                        }
+                    } 
                 }
-            } 
-        }
+            }
             
         }
 
