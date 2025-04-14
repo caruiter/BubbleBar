@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class RecipeScriptableObject : ScriptableObject
 {
     [SerializeField] public string drinkName;
+    [SerializeField] public string recipeDisplayName;
 
     [SerializeField] public List<Sprite> icons;
     [SerializeField] public List<string> ingredients;

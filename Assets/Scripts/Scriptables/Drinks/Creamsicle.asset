@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Creamsicle
   m_EditorClassIdentifier: 
   drinkName: CREAMSICLE
+  recipeDisplayName: Creamsicle
   icons:
   - {fileID: 1720450316, guid: da77d0a658c55654eb28ef29ec6ed28c, type: 3}
   - {fileID: 2088512813, guid: faf95e0312f4b5245816f7e05221ec64, type: 3}

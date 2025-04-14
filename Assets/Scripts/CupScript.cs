@@ -23,6 +23,7 @@ public class CupScript : MonoBehaviour
     private bool shaking;
     [SerializeField] private GameObject shakePrompt;
     [SerializeField] private GameObject discardPrompt;
+    
 
     private Animator anim;
 
@@ -254,6 +255,7 @@ public class CupScript : MonoBehaviour
         for(int i = 0; i<3; i++){
             cardIcons[i].sprite = recipe.icons[i];
         }
+        recipeCard.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = recipe.recipeDisplayName;
     }
 
 
