@@ -595,7 +595,8 @@ MonoBehaviour:
   drinkDiscardSound: {fileID: 0}
   drinkSlideSound: {fileID: 0}
   drinkShakeSound: {fileID: 0}
-  CupAudioSource: {fileID: 0}
+  pointSound: {fileID: 0}
+  CupAudioSource: {fileID: 742193218700216001}
 --- !u!95 &5944905102600419975
 Animator:
   serializedVersion: 5

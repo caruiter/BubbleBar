@@ -43,8 +43,7 @@ public class CupScript : MonoBehaviour
     [SerializeField] private AudioClip drinkDiscardSound;
     [SerializeField] private AudioClip drinkSlideSound;
     [SerializeField] private AudioClip drinkShakeSound;
-    [SerializeField] private AudioClip pointSound;
-    //[SerializeField] private AudioSource CupAudioSource;
+    [SerializeField] private AudioSource CupAudioSource;
 
 
     void Awake(){
@@ -84,11 +83,14 @@ public class CupScript : MonoBehaviour
             Debug.Log("discarded contents of cup " + playerID);
             Contents = new List<string>();
             anim.SetTrigger("Discard");
-            foreach(GameObject g in contentIcons){
+            foreach(GameObject g in contentIcons)
+            {
                 g.SetActive(false);
             }
+            
             //Play discard drink sound
-            AudioManager.PlaySound(drinkDiscardSound);
+            CupAudioSource.clip = drinkDiscardSound;
+            CupAudioSource.Play();
          }
         }
 
@@ -132,14 +134,26 @@ public class CupScript : MonoBehaviour
             UnityEngine.UI.Image im = contentIcons[Contents.Count-1].GetComponent<UnityEngine.UI.Image>();
             im.sprite = ingr.icon; //COMMENT BACK IN AND TEST WHEN WE HAVE THESE
 
-            if(ingr.theIngredient == "SODA"){ //trigger animation if soda
+            if(ingr.theIngredient == "SODA")//trigger animation if soda
+            { 
                 TriggerSodaAnim("SODA");
-                AudioManager.PlaySound(sodaPourSound); //play soda sound
-            } else if(ingr.theIngredient == "CLEARSODA"){
+                //play soda sound
+                CupAudioSource.clip = sodaPourSound;
+                CupAudioSource.Play(); 
+
+            } 
+            else if(ingr.theIngredient == "CLEARSODA")
+            {
                 TriggerSodaAnim("CLEARSODA");
-                AudioManager.PlaySound(sodaPourSound); //play soda sound 
-            } else if(ingr.theIngredient != "SODA" && ingr.theIngredient != "CLEARSODA"){ //Play syrup sound if not soda
-                AudioManager.PlaySound(syrupPourSound);
+                //play soda sound
+                CupAudioSource.clip = sodaPourSound;
+                CupAudioSource.Play();
+            } 
+            else if(ingr.theIngredient != "SODA" && ingr.theIngredient != "CLEARSODA")
+            {
+                //Play syrup sound if not soda
+                CupAudioSource.clip = syrupPourSound;
+                CupAudioSource.Play();
             }
 
 
@@ -200,7 +214,9 @@ public class CupScript : MonoBehaviour
             Debug.Log("shakes: " + shakeCount);
             shakeCount++;
 
-            AudioManager.PlaySound(drinkShakeSound);
+            //play shake sound
+            CupAudioSource.clip = drinkShakeSound;
+            CupAudioSource.Play();
 
         }
 
@@ -242,8 +258,8 @@ public class CupScript : MonoBehaviour
             anim.SetTrigger("Finish");
 
             //Sound plays 
-            AudioManager.PlaySound(drinkSlideSound);
-            AudioManager.PlaySound(pointSound);
+            CupAudioSource.clip = drinkSlideSound;
+            CupAudioSource.Play();
 
             //UI
             discardPrompt.SetActive(false);
