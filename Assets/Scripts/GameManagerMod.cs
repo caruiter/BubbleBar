@@ -11,7 +11,7 @@ namespace Game
 		[SerializeField] public PlayerScript[] players;
 		[SerializeField] private LeaderboardManagerMod leaderboardManager;
 
-		[SerializeField] private List<CupScript> cups;
+		[SerializeField] public List<CupScript> cups;
 
 		[SerializeField] private List<RecipeScriptableObject> drinklist;
 

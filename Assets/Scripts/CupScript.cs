@@ -45,12 +45,15 @@ public class CupScript : MonoBehaviour
     [SerializeField] private AudioClip drinkShakeSound;
     [SerializeField] private AudioSource CupAudioSource;
 
+    private bool inPlay;
+
 
     void Awake(){
         inputPrefix = "P" + playerID; // Set inputPrefix using correct playerID
         controllable = true;
         shaking = false;
         anim = GetComponent<Animator>();
+        inPlay = true;
         //drinkAnim = GetComponentInParent<Animator>();
         Debug.Log(drinkAnim + "DRINK??");
 
@@ -124,7 +127,7 @@ public class CupScript : MonoBehaviour
 
     public void AddIngredient(IngredientScript ingr, int playerNum){ //called by IngredientScript class
     Debug.Log(playerNum + " | " + playerID);
-        if(Contents.Count<3 && playerNum == playerID){ //check that no more than 3 drinks have been added
+        if(Contents.Count<3 && playerNum == playerID && inPlay){ //check that no more than 3 drinks have been added and game is ongoing
             //Debug.Log("true?");
             //if(Contents.Contains(ingr) ==false){ //check that ingredient isn't already in there
             Contents.Add(ingr.theIngredient);
@@ -179,6 +182,9 @@ public class CupScript : MonoBehaviour
                     }
                 }
 
+                //recipeCard.SetActive(false);
+                DeactivateCard();
+
                 Debug.Log("got here");
                 if(correct){ // if correct up points and get new recipe
                     TriggerFullDrinkAnim(recipe.drinkName);
@@ -208,7 +214,7 @@ public class CupScript : MonoBehaviour
         //Put code for turning the emptying cup function off here
         
         //if(Input.GetButtonDown(inputPrefix + "Button" + (1)) || Input.GetButtonDown(inputPrefix + "Button" + (2)) || Input.GetButtonDown(inputPrefix + "Button" + (3)))
-        if(Input.GetButtonDown(inputPrefix + "Button" + (2))) //modified to only count middle button
+        if(Input.GetButtonDown(inputPrefix + "Button" + (2)) && inPlay) //modified to only count middle button
         { 
             //number of shakes goes up each time the player presses an input
             Debug.Log("shakes: " + shakeCount);
@@ -220,7 +226,7 @@ public class CupScript : MonoBehaviour
 
         }
 
-        if(shakeCount >= shakeTarget){ //Drink is finished shaking
+        if(shakeCount >= shakeTarget && inPlay){ //Drink is finished shaking
 
             Debug.Log("Drink done!");
             shaking = false;
@@ -268,10 +274,26 @@ public class CupScript : MonoBehaviour
     }
 
     public void UpdateCard(){
+        recipeCard.transform.GetChild(3).gameObject.SetActive(true);
         for(int i = 0; i<3; i++){
+            cardIcons[i].gameObject.SetActive(true);
             cardIcons[i].sprite = recipe.icons[i];
         }
         recipeCard.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = recipe.recipeDisplayName;
+    }
+
+    public void DeactivateCard(){ //hide recipe card UI
+        recipeCard.transform.GetChild(3).gameObject.SetActive(false);
+        for(int i = 0; i<3; i++){
+            cardIcons[i].gameObject.SetActive(false);
+        }
+    }
+
+    public void EndGame(){ //hide UI, stop score from increasing
+        inPlay = false;
+        DeactivateCard();
+        discardPrompt.SetActive(false);
+        shakePrompt.SetActive(false);
     }
 
 

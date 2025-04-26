@@ -99,6 +99,10 @@ public class GameTimerScript : MonoBehaviour
         GameManagerMod GM = GameObject.Find("GameManager").GetComponent<GameManagerMod>();
         scoreScreen.SetActive(true);
 
+        foreach(CupScript cup in GM.cups){
+            cup.EndGame();
+        }
+
         List<int> sorting = new List<int>(); //put scores in list and sort
         for(int s = 0; s < 4;s++){
            sorting.Add(GM.players[s].Score);
