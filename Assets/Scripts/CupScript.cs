@@ -86,6 +86,8 @@ public class CupScript : MonoBehaviour
             Debug.Log("discarded contents of cup " + playerID);
             Contents = new List<string>();
             anim.SetTrigger("Discard");
+                UpdateCard();
+                discardPrompt.SetActive(false);
             foreach(GameObject g in contentIcons)
             {
                 g.SetActive(false);
