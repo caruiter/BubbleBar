@@ -70,6 +70,7 @@ public class GameTimerScript : MonoBehaviour
                 ShowRanks();
                 showingRanks = true;
                 Debug.Log("scores??");
+                GetComponent<PauseScreenManager>().enabled = false; //disable pausing
             } 
         } else{
             if(showingRanks){
