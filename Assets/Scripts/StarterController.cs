@@ -45,7 +45,7 @@ public class StarterController : MonoBehaviour
     void Update()
     {
         if(!started){
-            for(int i = 0; i<=3; i++){ //look for button prompts to spawn players + cups
+            for(int i = 0; i<=1; i++){ //look for button prompts to spawn players + cups // EDITED FOR 2 PLAYER
                 string inputPrefix = "P"+(i+1);
                 if(Input.GetButtonDown(inputPrefix + "Button" + (1)) || Input.GetButtonDown(inputPrefix + "Button" + (2)) || Input.GetButtonDown(inputPrefix + "Button" + (3))){
                     if(!activatedPlayers.Contains(players[i].GetComponent<PlayerScript>())){
@@ -58,7 +58,7 @@ public class StarterController : MonoBehaviour
                         sec = 0;
                         ct = 0;
 
-                        if(activatedPlayers.Count>=4){ //if all players activated just start
+                        if(activatedPlayers.Count>=2){ //if all players activated just start // EDITED FOR 2 PLAYER
                             sec = 15;
                         }
                     }
