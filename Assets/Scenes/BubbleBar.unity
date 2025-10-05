@@ -2452,14 +2452,10 @@ MonoBehaviour:
   players:
   - {fileID: 1013962946}
   - {fileID: 1956828876}
-  - {fileID: 1406147169}
-  - {fileID: 1217077806}
   leaderboardManager: {fileID: 1489810780}
   cups:
   - {fileID: 1632100316}
   - {fileID: 2088922124}
-  - {fileID: 752740241}
-  - {fileID: 1901969329}
   drinklist:
   - {fileID: 11400000, guid: 8ac1449697089cc46894a226b4e485ae, type: 2}
   - {fileID: 11400000, guid: 2c2700aed81f38d4aa640603d7576d42, type: 2}
