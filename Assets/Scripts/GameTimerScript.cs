@@ -105,23 +105,23 @@ public class GameTimerScript : MonoBehaviour
         }
 
         List<int> sorting = new List<int>(); //put scores in list and sort
-        for(int s = 0; s < 2;s++){ //edited for 2 Player
+        for(int s = 0; s < 4;s++){
            sorting.Add(GM.players[s].Score);
         }
         sorting.Sort();
 
-        for(int i =0; i<2; i++){ // edited for 2 player
+        for(int i =0; i<4; i++){
             scoreTexts[i].text = GM.players[i].Score.ToString(); //display player's score
 
-            if(sorting[1]==GM.players[i].Score){//determine and show rank //edited for 2 Player
+            if(sorting[3]==GM.players[i].Score){//determine and show rank
                 playerRankings[i].text = "1st";
-            } else {
+            } else if(sorting[2]==GM.players[i].Score){
                 playerRankings[i].text = "2nd";
-            } /*else if(sorting[1]==GM.players[i].Score){
+            } else if(sorting[1]==GM.players[i].Score){
                 playerRankings[i].text = "3rd";
             } else{
                 playerRankings[i].text = "4th";
-            }*/
+            }
         }
     }
 }
